@@ -115,7 +115,7 @@ body {
 /* Hero Title - Aligning More to the Right */
 .hero h2 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 2.5rem;
   color: #323131;
   text-align: right; 
@@ -133,6 +133,19 @@ body {
   color: #323131;
   margin-top: 10px; /* Adds spacing */
 }
+
+/* Phone Number Styling */
+.phone-number {
+  font-size: 1rem;  /* ✅ Adjust the size as needed */
+  font-weight: 900;   /* ✅ Make it bold */
+  text-decoration: none; /* ✅ Remove underline */
+  transition: color 0.3s;
+}
+
+.phone-number:hover {
+  color: #A8D32A; /* ✅ Green hover effect */
+}
+
 
 /* Call-to-Action Button */
 button {

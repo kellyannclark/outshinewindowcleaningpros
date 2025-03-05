@@ -11,7 +11,8 @@ const Header = () => {
         <nav className="nav">
           <a href="#services">Services</a>
           <a href="#reviews">Reviews</a>
-          <a href="#contact">Contact Us</a>
+          <a href="#contact">About Us</a>
+          <a href="#contact" className="phone-number">801-661-8232</a>
         </nav>
       </div>
     </header>
