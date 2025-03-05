@@ -1,8 +1,7 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;600&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ovo&display=swap');
 /* Apply global fonts */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -10,12 +9,12 @@ body {
   color: #333;
 }
 
-/* Headings & Buttons (Use Bold, Clean Font) */
-h1, h2, h3, button {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #323131;/* Match your logo */
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; /* Adjust for thickness */
+  color: #1a1a1a; /* Dark grey for a clean look */
 }
+
 
 /* Paragraph Text (Readable Font) */
 p, input, textarea {
@@ -31,20 +30,14 @@ p, input, textarea {
   font-family: "Arial", sans-serif;
 }
 
-/* Body Background */
-body {
-  background-color: #f5fafe; /* Light background for a clean look */
-  color: #333;
-}
-
 /* Header Styling */
 .header {
-  background-color: white; /* ✅ Solid white background */
+  background: linear-gradient(to right, white 30%, #1a88ed 100%);
   color: #323131;
-  padding: 15px 40px;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* ✅ Pushes logo left & text right */
+  justify-content: space-between;
   width: 100%;
   height: 120px;
   position: fixed;
@@ -54,97 +47,137 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Centering Header Content */
+
 .header-container {
   display: flex;
-  align-items: center;
+  align-items: center;  
+  justify-content: space-between; 
   width: 100%;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1400px;
+  padding: 0 20px; 
 }
 
-/* Logo Styling */
+
+/* Default Logo Styling (Mobile First) */
 .logo {
-  width: 160px;  /* ✅ Increase size */
+  width: 130px; /* Default size for mobile */
   height: auto;
+  max-height: 80px; /* Prevents it from getting too tall */
+  object-fit: contain;
+  margin-left: 0; /* ✅ Ensures it starts at the left */
 }
 
 
-/* Navigation Bar */
+/*  Navigation Bar - Mobile First */
 .nav {
-  margin-left: auto; /* Pushes nav to the right */
-  display: flex;
-  gap: 20px; /* Space between links */
+  display: none; /* Hide by default on mobile */
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px px rgba(0, 0, 0, 0.1);
 }
 
+.nav.active {
+  display: flex;
+}
+
+/* Ensure links inside dropdown are visible */
 .nav a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 1 rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  color: #323131;
+  color:   #545454;
+  padding: 10px 0;
+  display: block; 
   transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: #c1ff72;/* Blue hover effect */
+  color: #545454;
 }
 
+/* Mobile Menu Button */
+.menu-toggle {
+  display: block;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
 
+/*  Default Phone Number Styling */
+.phone-number {
+  background: white;
+  color: black; 
+  font-weight: bold;
+  padding: 7px 12px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: right;
+  order: 0; 
+  margin-right: 25px; 
+  margin-left: auto; 
+}
 
+/*  Remove Underline */
+.phone-number a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.25rem;
+}
 
-
-/* Hero Section */
+/* Hero Section - Taller */
 .hero {
   width: 100%;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 1025px; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Keeps the overall section centered */
+  align-items: center;
   justify-content: center;
   text-align: center;
   color: #545454;
-  padding: 20px;
-  position: relative; /* Needed for absolute positioning */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hero Title - Aligning More to the Right */
+/* Hero Image */
+.hero-img {
+  width: auto;
+  height: auto;
+  max-height: 700px;
+  object-fit: cover;
+  position: absolute;
+  top: 130px; /* Moves image down */
+  left: 0;
+  z-index: -1;
+}
+
+
+/* ✅ Hero Title - Moves Up */
 .hero h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 2.5rem;
-  color: #323131;
-  text-align: right; 
-  width: 60%; 
-  margin-left: auto; 
-  padding-right: 15%; 
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #1a1a1a;
+  width: 90%;
+  text-align: center;
+  margin-top: -680px; /* ✅ Reduce space above */
+  margin-bottom: 0; /* ✅ Avoid pushing it down */
+  position: relative;
+  z-index: 100; 
+  font-family: "Manrope";
 }
 
-/* Hero Subtitle */
-.hero p {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400; /* Slightly lighter for contrast */
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: #323131;
-  margin-top: 10px; /* Adds spacing */
-}
-
-/* Phone Number Styling */
-.phone-number {
-  font-size: 1rem;  /* ✅ Adjust the size as needed */
-  font-weight: 900;   /* ✅ Make it bold */
-  text-decoration: none; /* ✅ Remove underline */
-  transition: color 0.3s;
-}
-
-.phone-number:hover {
-  color: #A8D32A; /* ✅ Green hover effect */
-}
 
 
 /* Call-to-Action Button */
@@ -160,7 +193,8 @@ button {
 }
 
 button:hover {
-  background-color: #A8D32A; /* Green hover effect */
+  background-color: white;
+  color: #0057B7;
 }
 
 /* Service Cards */
@@ -210,7 +244,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  border-color: #A8D32A;
+  border-color: #1a88ed;
   outline: none;
 }
 
@@ -218,3 +252,66 @@ footer h2 {
   margin-bottom: 20px;
 }
 
+
+
+/* Desktops */
+@media (min-width: 1024px) {
+  .header-container {
+    padding: 0 40px; /* Adds space on larger screens */
+  }
+
+  .logo {
+    width: 140px; /* Adjust for larger screens */
+    max-height: 90px; /* Prevents it from being too tall */
+    margin-left: 0px; 
+  }
+
+  .hero {
+    height: 720px;
+    padding: 50px;
+  }
+
+  .hero h2 {
+    text-align: center; /* ✅ Moves text to the right */
+    width: 60%; /* ✅ Reduce width for better alignment */
+    margin-left: 750px; /* ✅ Push text to the right */
+    margin-right: 10%; /* ✅ Space from right edge */
+    margin-top: -100px; /* ✅ Adjust position for larger screens */
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+
+  .nav a {
+    font-size: 1.1rem;
+    color: white;
+  }
+  .nav {
+    display: flex !important; /* ✅ Ensure visibility on desktop */
+    flex-direction: row;
+    position: static; /* ✅ Remove absolute positioning */
+    background: none;
+    box-shadow: none;
+    gap: 30px;
+  }
+
+  .phone-number {
+    font-size: 1.3rem;
+  }
+  .hero img {
+    object-fit: cover; 
+    opacity: 1;
+  }
+
+  .logo {
+    width: 150px; /* Make it slightly larger on desktops */
+    max-height: 100px; /* Prevents it from being too tall */
+    margin-left: -30px; /* Moves it slightly left */
+    margin-top: 10px;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+}
