@@ -1,16 +1,141 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@300;400&display=swap');
 
 
+/* Apply global fonts */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f5fafe; /* Light background */
+  color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Headings & Buttons (Use Bold, Clean Font) */
+h1, h2, h3, button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #0057B7; /* Match your logo */
 }
+
+/* Paragraph Text (Readable Font) */
+p, input, textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Body Background */
+body {
+  background-color: #f5fafe; /* Light background for a clean look */
+  color: #333;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(to right, #0057B7, #64B5F6); /* Smooth blue gradient */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.hero h2 {
+  color: #0057B7;
+  margin-top: 20px;
+}
+
+.hero p {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Call-to-Action Button */
+button {
+  background-color: #0057B7;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #A8D32A; /* Green hover effect */
+}
+
+/* Service Cards */
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border: 2px solid #64B5F6;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 87, 183, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #A8D32A;
+}
+
+/* Contact Form */
+footer {
+  background: #0057B7;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+  border-color: #A8D32A;
+  outline: none;
+}
+
+footer h2 {
+  margin-bottom: 20px;
+}
+
