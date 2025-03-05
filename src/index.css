@@ -14,7 +14,7 @@ body {
 h1, h2, h3, button {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: #0057B7; /* Match your logo */
+  color: #323131;/* Match your logo */
 }
 
 /* Paragraph Text (Readable Font) */
@@ -40,7 +40,7 @@ body {
 /* Header Styling */
 .header {
   background-color: white; /* ✅ Solid white background */
-  color: #4A4A4A; 
+  color: #323131;
   padding: 15px 40px;
   display: flex;
   align-items: center;
@@ -65,7 +65,7 @@ body {
 
 /* Logo Styling */
 .logo {
-  width: 140px;  /* ✅ Increase size */
+  width: 160px;  /* ✅ Increase size */
   height: auto;
 }
 
@@ -83,12 +83,12 @@ body {
   font-weight: 600;
   font-size: 1 rem;
   text-transform: uppercase;
-  color: #0057B7; 
+  color: #323131;
   transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: #5cb6f9; /* Blue hover effect */
+  color: #c1ff72;/* Blue hover effect */
 }
 
 
@@ -97,24 +97,41 @@ body {
 
 /* Hero Section */
 .hero {
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Keeps the overall section centered */
+  justify-content: center;
   text-align: center;
-  padding: 60px 20px;
+  color: #545454;
+  padding: 20px;
+  position: relative; /* Needed for absolute positioning */
 }
 
-.hero img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
+/* Hero Title - Aligning More to the Right */
 .hero h2 {
-  color: #0057B7;
-  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #323131;
+  text-align: right; 
+  width: 60%; 
+  margin-left: auto; 
+  padding-right: 15%; 
 }
 
+/* Hero Subtitle */
 .hero p {
-  color: #333;
-  font-size: 1.2rem;
-  margin: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Slightly lighter for contrast */
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #323131;
+  margin-top: 10px; /* Adds spacing */
 }
 
 /* Call-to-Action Button */
