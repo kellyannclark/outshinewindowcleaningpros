@@ -32,14 +32,14 @@ p, input, textarea {
 
 /* Header Styling */
 .header {
-  background: linear-gradient(to right, white 30%, #1a88ed 100%);
+  background: linear-gradient(to right, white 40%, #1a88ed 100%);
   color: #323131;
-  padding: 15px 20px;
+  padding: 15px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 120px;
+  height: 110px;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,11 +60,11 @@ p, input, textarea {
 
 /* Default Logo Styling (Mobile First) */
 .logo {
-  width: 130px; /* Default size for mobile */
-  height: auto;
-  max-height: 80px; /* Prevents it from getting too tall */
-  object-fit: contain;
-  margin-left: 0; /* ✅ Ensures it starts at the left */
+  width: 180px; /* Default size for mobile */
+  height: 3.5;
+  margin-left: -20px; 
+  margin-bottom: 10px;
+
 }
 
 
@@ -134,13 +134,12 @@ p, input, textarea {
 .phone-number a {
   text-decoration: none;
   color: black;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
-/* Hero Section - Taller */
 .hero {
   width: 100%;
-  height: 1025px; 
+  height: 850px; /* ✅ Reduce height */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,32 +150,23 @@ p, input, textarea {
   overflow: hidden;
 }
 
-/* Hero Image */
-.hero-img {
-  width: auto;
-  height: auto;
-  max-height: 700px;
-  object-fit: cover;
-  position: absolute;
-  top: 130px; /* Moves image down */
-  left: 0;
-  z-index: -1;
-}
 
 
-/* ✅ Hero Title - Moves Up */
+/* ✅ Hero Title - Moves to the Top Center in Mobile */
 .hero h2 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  color: #1a1a1a;
-  width: 90%;
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: #050a30;
+  width: 100%;
   text-align: center;
-  margin-top: -680px; /* ✅ Reduce space above */
-  margin-bottom: 0; /* ✅ Avoid pushing it down */
-  position: relative;
-  z-index: 100; 
-  font-family: "Manrope";
+  position: absolute;  /* ✅ Allows precise positioning */
+  top: 20%; /* ✅ Moves it closer to the top */
+  left: 50%; /* ✅ Centers it horizontally */
+  transform: translateX(-50%); /* ✅ Ensures perfect centering */
+  z-index: 100; /* ✅ Keeps text above the image */
+  font-family: "Manrope", sans-serif;
 }
+
 
 
 
@@ -184,7 +174,7 @@ p, input, textarea {
 button {
   background-color: #0057B7;
   color: white;
-  padding: 12px 20px;
+  padding: 12px 5px;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
@@ -271,14 +261,21 @@ footer h2 {
     padding: 50px;
   }
 
-  .hero h2 {
-    text-align: center; /* ✅ Moves text to the right */
-    width: 60%; /* ✅ Reduce width for better alignment */
-    margin-left: 750px; /* ✅ Push text to the right */
-    margin-right: 10%; /* ✅ Space from right edge */
-    margin-top: -100px; /* ✅ Adjust position for larger screens */
-    font-size: 3rem;
-  }
+/* ✅ Default H2 Positioning (For Desktop) */
+.hero h2 {
+  font-weight: 600;
+  font-size: 2.5rem; /* ✅ Bigger font for desktop */
+  color: #1a1a1a;
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  top: 30%; /* ✅ Moves it down slightly */
+  left: 50%;
+  padding-right: 235px;
+  transform: translateX(-50%);
+  z-index: 100;
+  font-family: "Manrope", sans-serif;
+}
 
   .hero p {
     font-size: 1.3rem;
@@ -306,7 +303,7 @@ footer h2 {
   }
 
   .logo {
-    width: 150px; /* Make it slightly larger on desktops */
+    width: 210px; /* Make it slightly larger on desktops */
     max-height: 100px; /* Prevents it from being too tall */
     margin-left: -30px; /* Moves it slightly left */
     margin-top: 10px;
