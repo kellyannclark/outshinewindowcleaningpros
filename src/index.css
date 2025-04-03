@@ -4,13 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ovo&display=swap');
 /* Apply global fonts */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f5fafe; /* Light background */
   color: #333;
 }
 
 h1, h2, h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700; /* Adjust for thickness */
   color: #1a1a1a; /* Dark grey for a clean look */
 }
@@ -18,7 +18,7 @@ h1, h2, h3 {
 
 /* Paragraph Text (Readable Font) */
 p, input, textarea {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 
@@ -27,12 +27,12 @@ p, input, textarea {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Header Styling */
 .header {
-  background: linear-gradient(to right, white 40%, #1a88ed 100%);
+  background: linear-gradient(to right, white 40%, #d9d9d9 100%);
   color: #323131;
   padding: 15px 15px;
   display: flex;
@@ -61,9 +61,9 @@ p, input, textarea {
 /* Default Logo Styling (Mobile First) */
 .logo {
   width: 180px; /* Default size for mobile */
-  height: 3.5;
+  height: 3;
   margin-left: -20px; 
-  margin-bottom: 5px;
+  margin-bottom: -3px;
 
 }
 
@@ -75,7 +75,7 @@ p, input, textarea {
   gap: 15px;
   position: absolute;
   top: 80px;
-  right: 20px;
+  right: 25px;
   background: white;
   padding: 15px;
   border-radius: 10px;
@@ -118,23 +118,25 @@ p, input, textarea {
   background: white;
   color: black; 
   font-weight: bold;
-  padding: 7px 12px;
-  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif; 
+  padding: 7px 30px;
+  border-radius: 4px;
   text-align: center;
   display: flex;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: right;
   order: 0; 
-  margin-right: 25px; 
+  margin-right: 55px; 
   margin-left: auto; 
 }
+
 
 /*  Remove Underline */
 .phone-number a {
   text-decoration: none;
-  color: black;
-  font-size: 1rem;
+  color: #1e3a8a;
+  font-size: 1.2rem;
 }
 
 .hero {
@@ -150,30 +152,52 @@ p, input, textarea {
   overflow: hidden;
 }
 
-
-
-/* ✅ Hero Title - Moves to the Top Center in Mobile */
-.hero h2 {
-  font-weight: 600;
-  font-size: 1.75rem;
-  color: #050a30;
+.hero-overlay {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;  /* Stack vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 60px;
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
   text-align: center;
-  position: absolute;  /* ✅ Allows precise positioning */
-  top: 20%; /* ✅ Moves it closer to the top */
-  left: 50%; /* ✅ Centers it horizontally */
-  transform: translateX(-50%); /* ✅ Ensures perfect centering */
-  z-index: 100; /* ✅ Keeps text above the image */
-  font-family: "Manrope", sans-serif;
 }
+
+.fivestar-badge {
+  width: 160px;
+  max-width: 80%;
+  height: auto;
+}
+
+.hero-tagline {
+  width: 280px;
+  max-width: 90%;
+  height: auto;
+}
+
+/* 🖼️ Fullscreen background image */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 
 
 
 
 /* Call-to-Action Button */
 button {
-  background-color: #0057B7;
-  color: white;
+  background-color: #1e3a8a;
+  color: #1e3a8a;
   padding: 12px 5px;
   font-size: 1rem;
   border: none;
@@ -250,60 +274,40 @@ footer h2 {
     padding: 0 40px; /* Adds space on larger screens */
   }
 
-  .logo {
-    width: 140px; /* Adjust for larger screens */
-    max-height: 90px; /* Prevents it from being too tall */
-    margin-left: 0px; 
-  }
-
   .hero {
-    height: 720px;
-    padding: 50px;
+    height: 1000px; /* 🆙 Taller on desktop */
+    padding: 80px -10px 80px -25px; /* top, right, bottom, left */
   }
+  
 
-/* ✅ Default H2 Positioning (For Desktop) */
-.hero h2 {
-  font-weight: 600;
-  font-size: 2.5rem; /* ✅ Bigger font for desktop */
-  color: #1a1a1a;
-  width: 100%;
-  text-align: right;
-  position: absolute;
-  top: 30%; /* ✅ Moves it down slightly */
-  left: 50%;
-  padding-right: 235px;
-  transform: translateX(-50%);
-  z-index: 100;
-  font-family: "Manrope", sans-serif;
-}
 
-  .hero p {
-    font-size: 1.3rem;
-  }
-
-  .nav a {
-    font-size: 1.1rem;
-    color: white;
-  }
   .nav {
-    display: flex !important; /* ✅ Ensure visibility on desktop */
+    display: flex !important;
     flex-direction: row;
-    position: static; /* ✅ Remove absolute positioning */
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 40px; 
+    position: static;
     background: none;
     box-shadow: none;
-    gap: 30px;
   }
+  
+  .nav a {
+    font-size: 1.15rem;
+    color: #1e3a8a;
+    margin: 0; 
+    padding: 5px 10px; 
+    text-decoration: none;
+  }
+  
 
   .phone-number {
     font-size: 1.3rem;
   }
-  .hero img {
-    object-fit: cover; 
-    opacity: 1;
-  }
+
 
   .logo {
-    width: 210px; /* Make it slightly larger on desktops */
+    width: 170px; /* Make it slightly larger on desktops */
     max-height: 100px; /* Prevents it from being too tall */
     margin-left: -30px; /* Moves it slightly left */
     margin-top: 10px;
@@ -311,4 +315,23 @@ footer h2 {
   .menu-toggle {
     display: none !important;
   }
+}
+/* 🖥️ Move badge to top-left on desktop */
+.fivestar-badge {
+  position: absolute;
+  top: -220px;     /* ✅ This moves it down from the top */
+  left: 60px;    /* ✅ This moves it right from the left edge */
+  width: 400px;  /* Adjust to your preferred size */
+  max-width: 100%;
+  margin: 0;     /* ✅ Remove margin interference */
+}
+
+.hero-tagline {
+  position: absolute;
+  top: 45%;               /* ✅ Vertically centered-ish */
+  right: 180px;            /* ✅ Pushes it away from the right edge */
+  transform: translateY(-50%);
+  width: 700px;
+  max-width: 100%;
+  z-index: 10;
 }

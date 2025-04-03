@@ -3,18 +3,16 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="hero">
-      {/* ✅ Main Hero Image */}
-      <img src="/hero.jpg" alt="Hero Background" className="hero-img" />
+      {/* Overlay container for badge + tagline */}
+      <div className="hero-overlay">
+        <img src="/fivestar.png" alt="5 Star Badge" className="fivestar-badge" />
+        <img src="/tagline.png" alt="Tagline" className="hero-tagline" />
+      </div>
 
-      {/* ✅ Overlay Image - Positioned Separately */}
-      <img src="/overlay.png" alt="Overlay" className="hero-overlay" />
-
-      {/* ✅ Text Inside Hero */}
-      <h2>We'll Let the Light In!</h2>
+      {/* Background image */}
+      <img src="/hero.png" alt="Hero Background" className="hero-img" />
     </section>
   );
 };
 
 export default Hero;
-
-
