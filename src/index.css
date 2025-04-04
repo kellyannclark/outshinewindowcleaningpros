@@ -61,7 +61,7 @@ p, input, textarea {
 .logo {
   width: 140px; /* Default size for mobile */
   height: 3;
-  margin-left: -50px; 
+  margin-left: -45px; 
   margin-bottom: 4px;
 
 }
@@ -155,31 +155,25 @@ p, input, textarea {
 }
 
 .hero-overlay {
-  position: relative;
-  z-index: 10;
   display: flex;
-  flex-direction: column;  /* Stack vertically */
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding-top: 60px;
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
+  flex-direction: column;
 }
 
-.fivestar-badge {
-  width: 160px;
-  max-width: 80%;
-  height: auto;
-}
 
-.hero-tagline {
-  width: 280px;
-  max-width: 90%;
-  height: auto;
-}
+  .hero-tagline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers on both axes */
+    width: 700px;
+    max-width: 100%;
+    z-index: 10;
+    text-align: center;
+  }
+  
+
 
 /* 🖼️ Fullscreen background image */
 .hero-img {
@@ -327,12 +321,4 @@ footer h2 {
   margin: 0;     /* ✅ Remove margin interference */
 }
 
-.hero-tagline {
-  position: absolute;
-  top: 45%;               /* ✅ Vertically centered-ish */
-  right: 180px;            /* ✅ Pushes it away from the right edge */
-  transform: translateY(-50%);
-  width: 700px;
-  max-width: 100%;
-  z-index: 10;
-}
+
