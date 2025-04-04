@@ -172,6 +172,10 @@ p, input, textarea {
   max-width: 700px;
   height: auto;
 }
+.tagline2 {
+  margin-top: -130px;   /* Moves it up */ 
+}
+
 
 
   
