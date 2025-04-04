@@ -60,7 +60,7 @@ p, input, textarea {
 
 /* Default Logo Styling (Mobile First) */
 .logo {
-  width: 180px; /* Default size for mobile */
+  width: 140px; /* Default size for mobile */
   height: 3;
   margin-left: -20px; 
   margin-bottom: -3px;
@@ -306,12 +306,11 @@ footer h2 {
   }
 
 
-  .logo {
-    width: 170px; /* Make it slightly larger on desktops */
-    max-height: 100px; /* Prevents it from being too tall */
-    margin-left: -30px; /* Moves it slightly left */
-    margin-top: 10px;
+  .logo img {
+    max-width: 100%;
+    height: auto;
   }
+  
   .menu-toggle {
     display: none !important;
   }

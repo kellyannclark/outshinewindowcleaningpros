@@ -22,7 +22,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         {/* ✅ Logo */}
-        <img src="/logo1.jpg" alt="Outshine Window Cleaning" className="logo" />
+        <img src="/logo1.png" alt="Outshine Window Cleaning" className="logo" />
 
         {/* ✅ Phone Number */}
         <div className="phone-number">
