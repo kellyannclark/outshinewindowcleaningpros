@@ -168,7 +168,7 @@ p, input, textarea {
 
 
 .hero-tagline {
-  width: 90%;
+  width: 100%;
   max-width: 1700px;
   height: auto;
   margin-top: 50px; /* push it toward the top */
