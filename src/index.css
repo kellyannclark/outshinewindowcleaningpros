@@ -61,8 +61,8 @@ p, input, textarea {
 .logo {
   width: 140px; /* Default size for mobile */
   height: 3;
-  margin-left: -20px; 
-  margin-bottom: -3px;
+  margin-left: -50px; 
+  margin-bottom: 4px;
 
 }
 
@@ -103,21 +103,23 @@ p, input, textarea {
 }
 
 /* Mobile Menu Button */
+/* Mobile Menu Button */
 .menu-toggle {
+  all: unset; /* Resets all inherited styles */
   display: block;
-  font-size: 3rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #1e3a8a; /* Sets the icon color to blue */
+  cursor: pointer; /* Changes cursor to pointer to indicate it's clickable */
 }
+
+
 
 /*  Default Phone Number Styling */
 .phone-number {
   background: white;
-  color: black; 
+  color: black;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif; 
+  font-family: 'Montserrat', sans-serif;
   padding: 5px 15px;
   border-radius: 4px;
   text-align: center;
@@ -125,17 +127,18 @@ p, input, textarea {
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: right;
-  order: 0; 
-  margin-right: 10px; 
-  margin-left: auto; 
+  order: 0;
+  margin-right: 10px;
+  margin-left: auto;
 }
+
 
 
 /*  Remove Underline */
 .phone-number a {
   text-decoration: none;
   color: #1e3a8a;
-  font-size: .7rem;
+  font-size: .9rem;
 }
 
 .hero {
@@ -188,9 +191,6 @@ p, input, textarea {
   left: 0;
   z-index: 1;
 }
-
-
-
 
 
 /* Call-to-Action Button */
@@ -265,12 +265,22 @@ footer h2 {
   margin-bottom: 20px;
 }
 
+/* Media query for screens wider than 320px */
+@media (max-width: 340px) {
 
+
+  .phone-number {
+    display: none; /* Show phone number */
+  }
+}
 
 /* Desktops */
 @media (min-width: 1024px) {
   .header-container {
     padding: 0 40px; /* Adds space on larger screens */
+  }
+  .header .phone-number {
+    font-size: 1.7rem;
   }
 
   .hero {
@@ -290,16 +300,14 @@ footer h2 {
   }
   
   .nav a {
-    font-size: 1.15rem;
+    font-size: .9rem;
     color: #1e3a8a;
     margin: 0; 
     padding: 5px 10px; 
     text-decoration: none;
   }
   
-  .phone-number {
-    font-size: 1.3rem;
-  }
+
   .logo img {
     max-width: 100%;
     height: auto;
