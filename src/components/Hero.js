@@ -39,7 +39,6 @@ const Hero = () => {
       {/* Overlay content (e.g. badge + tagline) */}
       <div className="hero-overlay">
       <img src="/tagline.png" alt="Tagline" className="hero-tagline" />
-      <img src="/tagline2.png" alt="Secondary Tagline" className="tagline2" />
     </div>
 
     </section>

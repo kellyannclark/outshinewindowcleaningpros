@@ -157,29 +157,24 @@ p, input, textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 30px; /* spacing between images */
-  height: 100%; /* Make sure it's filling the hero section */
-  z-index: 10;
+  justify-content: space-between; /* More flexibility */
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  gap: 20px;
   text-align: center;
+  z-index: 10;
 }
 
-.hero-tagline,
-.tagline2 {
-  position: static; /* Let Flexbox do the layout */
-  transform: none;
+
+.hero-tagline {
   width: 90%;
-  max-width: 700px;
+  max-width: 1700px;
   height: auto;
-}
-.tagline2 {
-  margin-top: -130px;   /* Moves it up */ 
+  margin-top: 20px; /* push it toward the top */
 }
 
 
-
-  
-  
 
 
 /* 🖼️ Fullscreen background image */
