@@ -222,7 +222,7 @@ button:hover {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 
@@ -260,8 +260,6 @@ button:hover {
   margin-bottom: 25px;
   overflow-wrap: break-word;
 }
-
-
 
 
 .slider-arrow {
