@@ -39,11 +39,24 @@ const Hero = () => {
       {/* Overlay content (e.g. badge + tagline) */}
       <div className="hero-overlay">
       <img src="/tagline.png" alt="Tagline" className="hero-tagline" />
-    </div>
+        {/* ✅ Call-to-Action Button */}
+        <button
+        className="hero-button"
+        onClick={() => {
+          const contactSection = document.getElementById("contact");
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+      >
+        Get a Free Quote
+      </button>
 
-    </section>
-  );
-};
+          </div>
+
+          </section>
+        );
+      };
 
 export default Hero;
 

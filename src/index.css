@@ -290,11 +290,51 @@ button:hover {
 }
 
 
+.top-bar {
+  background-color: #d1e9ff; /* light blue */
+  color: #1e3a8a;            /* dark blue text */
+  font-size: 1.2rem;
+  padding: 6px 0;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+
+.header {
+  margin-top: 32px; /* Push main header below top bar */
+}
+.hero-button {
+  margin-top: 30px;
+  margin-bottom: 150px;
+  background-color: white;
+  color: black;
+  font-size: 1.3rem;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: white;
+}
+
 
 /* Media query for screens wider than 320px */
 @media (max-width: 340px) {
   .phone-number {
     display: none; /* Show phone number */
+  }
+}
+
+@media (max-width: 650px) {
+  .top-bar {
+    font-size: .7rem;
   }
 }
 
@@ -355,6 +395,24 @@ button:hover {
     gap: 20px;
   }
 
+  .form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+
+
 
 /* 👇 For mobile */
 @media (max-width: 480px) {
@@ -382,5 +440,15 @@ button:hover {
   .slider-card {
     min-width: 23%;
     max-width: 23%;
+  }
+
+  .hero {
+    height: 1000px; /* More room to show everything */
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 1000px; /* More room to show everything */
   }
 }
