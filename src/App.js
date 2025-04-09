@@ -12,16 +12,25 @@ function App() {
       <Header />
       <Hero />
 
-      {/* Our Services Header */}
-      <section style={{ paddingTop: "40px" }} className="pb-8 bg-white text-center">
-        <h2 className="!text-6xl font-bold text-black">Our Services</h2>
+{/* Our Services Header */}
+      <section id="services" className="services-header">
+        <h2 className="services-title">Our Services</h2>
       </section>
+
 
       <CardSlider />
 
+      <div className="w-full flex justify-center my-8 px-4">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/mMh0BPsMjuA?si=k7_tUCsRJkgVtcX6" 
+      title="YouTube video player" frameborder="0" allow="accelerometer;
+       autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+        web-share" referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+    </div>
+
       {/* 👇 Contact Form Section */}
       <section id="contact" style={{ padding: "80px 20px", backgroundColor: "#f5fafe" }}>
-        <h2 className="text-4xl text-center font-bold mb-8">Contact Us</h2>
+        <h2 className="text-4xl text-center font-bold mb-8">CONTACT US</h2>
         <ContactForm />
       </section>
 

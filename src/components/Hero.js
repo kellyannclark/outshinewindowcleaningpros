@@ -41,7 +41,7 @@ const Hero = () => {
       <img src="/tagline.png" alt="Tagline" className="hero-tagline" />
         {/* ✅ Call-to-Action Button */}
         <button
-        className="hero-button"
+        className="freequote-button"
         onClick={() => {
           const contactSection = document.getElementById("contact");
           if (contactSection) {
@@ -49,7 +49,7 @@ const Hero = () => {
           }
         }}
       >
-        Get a Free Quote
+        Free Quote!
       </button>
 
           </div>

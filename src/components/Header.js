@@ -20,7 +20,7 @@ const Header = () => {
     <>
       {/* ✅ Top Bar Section */}
       <div className="top-bar">
-        <p>📍 Serving Utah County — Professional Window & Exterior Cleaning</p>
+        <p>📍 Serving Utah, Salt Lake & Wasatch County — High Quality Window Cleaning</p>
       </div>
 
       {/* ✅ Main Header */}
@@ -28,9 +28,13 @@ const Header = () => {
         <div className="header-container">
           <img src="/logo1.png" alt="Outshine Window Cleaning" className="logo" />
 
+
+
+
           <div className="phone-number">
             <a href="tel:8016618232">(801) 661-8232</a>
           </div>
+
 
           <button 
             className="menu-toggle" 
@@ -40,7 +44,20 @@ const Header = () => {
           </button>
 
           <nav ref={menuRef} className={`nav ${menuOpen ? "active" : ""}`}>
-            <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+          <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.getElementById("services");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                    setMenuOpen(false); // close mobile nav if open
+                  }
+                }}
+              >
+                Services
+              </a>
+
             <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           </nav>
