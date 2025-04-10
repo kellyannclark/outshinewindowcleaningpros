@@ -20,7 +20,7 @@ const Header = () => {
     <>
       {/* ✅ Top Bar Section */}
       <div className="top-bar">
-        <p>📍 Serving Utah, Salt Lake & Wasatch County — High Quality Window Cleaning</p>
+        <p>📍 Serving Utah, Salt Lake & Wasatch County — Call (801) 661-8232  </p>
       </div>
 
       {/* ✅ Main Header */}
@@ -32,8 +32,12 @@ const Header = () => {
 
 
           <div className="phone-number">
-            <a href="tel:8016618232">(801) 661-8232</a>
-          </div>
+          <a href="tel:8016618232">
+            <span className="phone-icon" role="img" aria-label="phone">📞</span>
+            (801) 661-8232
+          </a>
+        </div>
+
 
 
           <button 

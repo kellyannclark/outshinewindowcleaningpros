@@ -12,38 +12,39 @@ function App() {
       <Header />
       <Hero />
 
-{/* Our Services Header */}
-      <section id="services" className="services-header">
-        <h2 className="services-title">Our Services</h2>
-      </section>
+      {/* ✅ Add padding container here */}
+      <div className="site-container">
 
+        {/* Our Services Header */}
+        <section id="services" className="services-header">
+          <h2 className="services-title">Our Services</h2>
+        </section>
 
-      <CardSlider />
+        <CardSlider />
 
-      <div class="video-wrapper">
-        <div class="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/mMh0BPsMjuA?si=k7_tUCsRJkgVtcX6"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+        <div className="video-wrapper">
+          <div className="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/mMh0BPsMjuA?si=k7_tUCsRJkgVtcX6"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
-      </div>
 
+        {/* 👇 Contact Form Section */}
+        <section id="contact" style={{ padding: "80px 20px", backgroundColor: "#f5fafe" }}>
+          <h2 className="text-4xl text-center font-bold mb-8">CONTACT US</h2>
+          <ContactForm />
+        </section>
 
-
-      {/* 👇 Contact Form Section */}
-      <section id="contact" style={{ padding: "80px 20px", backgroundColor: "#f5fafe" }}>
-        <h2 className="text-4xl text-center font-bold mb-8">CONTACT US</h2>
-        <ContactForm />
-      </section>
+      </div> {/* End of site-container */}
 
     </div>
   );
 }
-
 
 export default App;

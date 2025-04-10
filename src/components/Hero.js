@@ -49,7 +49,7 @@ const Hero = () => {
           }
         }}
       >
-        Free Quote!
+        Contact Us!
       </button>
 
           </div>

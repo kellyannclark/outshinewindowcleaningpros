@@ -21,6 +21,11 @@ h1, h2, h3 {
   color: #1a1a1a; /* Dark grey for a clean look */
 }
 
+.site-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 
 /* Paragraph Text (Readable Font) */
 p, input, textarea {
@@ -65,9 +70,9 @@ p, input, textarea {
 
 /* Default Logo Styling (Mobile First) */
 .logo {
-  width: 140px; /* Default size for mobile */
+  width: 150px; /* Default size for mobile */
   height: 3;
-  margin-left: -35px; 
+  margin-left: -30px; 
   margin-bottom: 4px;
   margin-top: 5px;
 
@@ -131,12 +136,35 @@ p, input, textarea {
 }
 
 .phone-number a {
-  font-size: .85rem;
+  font-size: .90rem;
   font-weight: 500;
   text-decoration: none;
   color: black;
   font-family: 'Montserrat', sans-serif; /* ✅ Switched to Montserrat */
   text-transform: uppercase; /* Or whatever you want here */
+}
+
+@keyframes ring {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-10deg); }
+  30% { transform: rotate(12deg); }
+  40% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+  60% { transform: rotate(-6deg); }
+  70% { transform: rotate(6deg); }
+  80% { transform: rotate(-4deg); }
+  90% { transform: rotate(4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.phone-icon {
+  display: inline-block;
+  margin-right: 10px; /* 👈 creates spacing between icon and number */
+  transform-origin: center;
+  font-size: 1.1em;
+  animation: ring 1s ease-in-out;
+  animation-iteration-count: 10;
 }
 
 .hero {
@@ -269,10 +297,10 @@ p, input, textarea {
 
 
 .top-bar {
-  background-color: #dbe9f4;/* light blue */
-  color: #1e3a8a;            /* dark blue text */
-  font-size: 1.2rem;
-  padding: 6px 0;
+  background-color: #333333;/* light blue */
+  color: white;           /* dark blue text */
+  font-size: .9rem;
+  padding: 8px 0;
   text-align: center;
   width: 100%;
   height: 40px;
@@ -302,7 +330,7 @@ p, input, textarea {
   margin-bottom: 200px;
   background-color: #f5fafe;
   color: black;
-  font-size: 1.3rem;
+  font-size: .9rem;
   padding: 14px 30px;
   border: 1px solid #444;
   border-radius: 6px;
@@ -353,29 +381,30 @@ p, input, textarea {
 }
 
 .video-wrapper {
-  width: 100%;
   display: flex;
-  justify-content: center;
-  margin: 2rem 1rem;
+  justify-content: center; /* ✅ centers child (video-container) horizontally */
+  padding: 2rem 1rem;
 }
 
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 2200px;
+  max-width: 1500px;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
   overflow: hidden;
+  margin: 0 auto; /* ✅ centers video-container itself */
 }
 
 .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%;  /* ✅ Fill container exactly */
   height: 100%;
   border: 0;
 }
+
 .header {
   position: relative;
   z-index: 2;
@@ -413,6 +442,9 @@ p, input, textarea {
     color: black;
     font-size: 1rem;
     margin-bottom: 10px;
+  }
+  .freequote-button {
+    font-size: 1.2rem;
   }
 
   .hero {
@@ -522,7 +554,7 @@ p, input, textarea {
 }
 
 /* Media query for screens wider than 320px */
-@media (max-width: 340px) {
+@media (max-width: 385px) {
   .phone-number {
     display: none; /* Show phone number */
   }
