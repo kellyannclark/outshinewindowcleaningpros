@@ -20,13 +20,20 @@ function App() {
 
       <CardSlider />
 
-      <div className="w-full flex justify-center my-8 px-4">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/mMh0BPsMjuA?si=k7_tUCsRJkgVtcX6" 
-      title="YouTube video player" frameborder="0" allow="accelerometer;
-       autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
-        web-share" referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen></iframe>
-    </div>
+      <div class="video-wrapper">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/mMh0BPsMjuA?si=k7_tUCsRJkgVtcX6"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+
 
       {/* 👇 Contact Form Section */}
       <section id="contact" style={{ padding: "80px 20px", backgroundColor: "#f5fafe" }}>

@@ -27,7 +27,7 @@ const Header = () => {
       <header className="header">
         <div className="header-container">
           <img src="/logo1.png" alt="Outshine Window Cleaning" className="logo" />
-
+          <div class="header-sparkle-overlay"></div>
 
 
 
