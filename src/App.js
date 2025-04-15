@@ -5,6 +5,7 @@ import './App.css';
 import './index.css';
 import CardSlider from "./components/Card-slider"; 
 import ContactForm from "./components/ContactForm"; // if you have it as a separate file
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
           <ContactForm />
         </section>
       </div>
+      <Footer />
     </div>
   );
 }
