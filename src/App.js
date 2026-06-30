@@ -7,6 +7,8 @@ import CardSlider from "./components/Card-slider";
 import ContactForm from "./components/ContactForm"; // if you have it as a separate file
 import Footer from "./components/Footer";
 
+
+
 function App() {
   useEffect(() => {
     const handleScroll = () => {
@@ -61,4 +63,6 @@ function App() {
   );
 }
 
+
 export default App;
+
