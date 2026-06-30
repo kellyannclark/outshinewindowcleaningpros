@@ -57,10 +57,9 @@ const Header = () => {
               ref={menuRef}
               className={`dropdown-menu ${menuOpen ? "active" : ""}`}
             >
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
+              <button
+                type="button"
+                onClick={() => {
                   const section = document.getElementById("services");
                   if (section) {
                     section.scrollIntoView({ behavior: "smooth" });
@@ -69,7 +68,7 @@ const Header = () => {
                 }}
               >
                 Services
-              </a>
+              </button>
 
               <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
               <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
@@ -81,4 +80,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header;    
+
