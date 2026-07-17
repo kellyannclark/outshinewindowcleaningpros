@@ -40,14 +40,7 @@ const Hero = () => {
             views, brighter rooms, and a home you’re proud of.
           </p>
 
-          <button
-            type="button"
-            className="freequote-button"
-            onClick={scrollToContact}
-          >
-            Get My Free Quote
-            <span aria-hidden="true"> →</span>
-          </button>
+
         </div>
       </div>
     </section>
