@@ -1,13 +1,7 @@
 import React from "react";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
 
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="hero">
