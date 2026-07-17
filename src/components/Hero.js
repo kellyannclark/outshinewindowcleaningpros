@@ -1,62 +1,57 @@
-// Hero.tsx
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-
-const images = [
-  "/hero1.jpg",
-  "/hero2.jpg",
-  "/hero3.jpg",
-  "/hero4.jpg",
-];
+import React from "react";
 
 const Hero = () => {
-  const [index, setIndex] = useState(0);
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 5000); // change every 5 seconds
-    return () => clearInterval(interval);
-  }, []);
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="hero">
-      <AnimatePresence>
-      <motion.img
-        key={images[index]}
-        src={images[index]}
-        alt="Hero Slide"
+      <img
+        src="/hero3.jpg"
+        alt="Professional residential window cleaning in Utah County"
         className="hero-img"
-        initial={{ scale: 1, opacity: 0 }}
-        animate={{ scale: 1.1, opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 5, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
       />
 
-      </AnimatePresence>
-
-      {/* Overlay content (e.g. badge + tagline) */}
       <div className="hero-overlay">
-      <img src="/tagline.png" alt="Tagline" className="hero-tagline" />
-        {/* ✅ Call-to-Action Button */}
-        <button
-        className="freequote-button"
-        onClick={() => {
-          const contactSection = document.getElementById("contact");
-          if (contactSection) {
-            contactSection.scrollIntoView({ behavior: "smooth" });
-          }
-        }}
-      >
-        Contact Us!
-      </button>
+        <div className="hero-content">
+          <div className="hero-review">
+            <span className="hero-stars" aria-hidden="true">
+              ★★★★★
+            </span>
 
+            <span>5-Star Rated • Trusted by Utah County Homeowners</span>
           </div>
 
-          </section>
-        );
-      };
+          <h1>
+            Dirty Windows?
+            <span>
+              We Make Them{" "}
+              <span className="disappear-word">Disappear.</span>
+            </span>
+          </h1>
+
+          <p>
+            Professional window cleaning in Utah County that restores clear
+            views, brighter rooms, and a home you’re proud of.
+          </p>
+
+          <button
+            type="button"
+            className="freequote-button"
+            onClick={scrollToContact}
+          >
+            Get My Free Quote
+            <span aria-hidden="true"> →</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
-
