@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import CardSlider from "./components/Card-slider";
+import ServicesSection from "./components/ServicesSection";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import About from "./components/About";
@@ -18,11 +18,9 @@ function HomePage() {
 
       <div className="site-container">
         {/* Our Services Header */}
-        <section id="services" className="services-header">
-          <h2 className="services-title">Our Services</h2>
-        </section>
 
-        <CardSlider />
+
+        <ServicesSection />
 
         <div className="video-wrapper">
           <div className="video-container">
