@@ -105,10 +105,9 @@ textarea {
 .logo {
   display: block;
   width: auto;
+  height: auto;
   max-width: 185px;
   max-height: 72px;
-  height: auto;
-  margin: 0;
   object-fit: contain;
 }
 

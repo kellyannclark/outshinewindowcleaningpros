@@ -65,13 +65,13 @@ const Header = () => {
           </a>
 
           <nav className="desktop-nav" aria-label="Main navigation">
-            <button
-              type="button"
-              className="nav-link"
-              onClick={() => scrollToSection("about")}
-            >
-              About Us
-            </button>
+          <button
+            type="button"
+            className="nav-link"
+            onClick={() => window.location.href = "/about"}
+          >
+            About Us
+          </button>
 
             <div className="desktop-services-menu">
               <button
