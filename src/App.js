@@ -8,6 +8,7 @@ import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import RecurringPlans from "./components/RecurringPlans";
+import ReviewsSection from "./components/ReviewsSection";
 import "./App.css";
 import "./index.css";
 
@@ -22,6 +23,7 @@ function HomePage() {
 
         <ServicesSection />
         <RecurringPlans />
+        <ReviewsSection />
 
         <div className="video-wrapper">
           <div className="video-container">

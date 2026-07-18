@@ -16,7 +16,7 @@ const Hero = () => {
               ★★★★★
             </span>
 
-            <span>5-Star Rated • Trusted by Utah County Homeowners</span>
+            <span>5-Star Rated • Trusted by Utah Homeowners</span>
           </div>
 
           <h1>
@@ -28,7 +28,7 @@ const Hero = () => {
           </h1>
 
           <p>
-            Professional window cleaning in Utah County that restores clear
+            Professional window cleaning in Utah that restores clear
             views, brighter rooms, and a home you’re proud of.
           </p>
 
