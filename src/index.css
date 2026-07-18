@@ -134,6 +134,32 @@ textarea {
     border-color 0.2s ease,
     transform 0.2s ease;
 }
+.hero-call-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 16px 36px;
+  background: #0b4f82;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(11, 79, 130, 0.25);
+}
+
+.hero-call-btn:hover {
+  background: #1568a8;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(11, 79, 130, 0.35);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 35px;
+  padding-left: 400px; /* Adjust this value */
+}
 
 .header-quote-button:hover,
 .header-quote-button:focus-visible {

@@ -1,34 +1,19 @@
 import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
-import Hero from "./components/Hero";  
-import './App.css';
-import './index.css';
-import CardSlider from "./components/Card-slider"; 
-import ContactForm from "./components/ContactForm"; // if you have it as a separate file
+import Hero from "./components/Hero";
+import CardSlider from "./components/Card-slider";
+import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
+import "./App.css";
+import "./index.css";
 
-
-function App() {
-  useEffect(() => {
-    const handleScroll = () => {
-      const topBar = document.querySelector('.top-bar');
-      if (!topBar) return;
-
-      if (window.scrollY > 30) {
-        topBar.classList.add('hidden');
-      } else {
-        topBar.classList.remove('hidden');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+function HomePage() {
   return (
-    <div className="App">
-      <Header />
+    <>
       <Hero />
 
       <div className="site-container">
@@ -48,21 +33,64 @@ function App() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-            ></iframe>
+            />
           </div>
         </div>
 
         {/* Contact Form Section */}
-        <section id="contact" style={{ padding: "80px 20px", backgroundColor: "#f5fafe" }}>
-          <h2 className="text-4xl text-center font-bold mb-8">CONTACT US</h2>
+        <section
+          id="contact"
+          style={{
+            padding: "80px 20px",
+            backgroundColor: "#f5fafe",
+          }}
+        >
+          <h2 className="text-4xl text-center font-bold mb-8">
+            CONTACT US
+          </h2>
+
           <ContactForm />
         </section>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 
+function App() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const topBar = document.querySelector(".top-bar");
+
+      if (!topBar) return;
+
+      if (window.scrollY > 30) {
+        topBar.classList.add("hidden");
+      } else {
+        topBar.classList.remove("hidden");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+   
+      <div className="App">
+        <Header />
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+
+        <Footer />
+      </div>
+
+  );
+}
 
 export default App;
-
