@@ -2667,3 +2667,16 @@ header.header nav.desktop-nav > a.nav-link::after {
   display: none !important;
 }
 
+.christmas-light-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 46, 30, 0.95) 0%,
+    rgba(16, 62, 39, 0.88) 35%,
+    rgba(74, 18, 18, 0.55) 72%,
+    rgba(74, 18, 18, 0.15) 100%
+  );
+}
+

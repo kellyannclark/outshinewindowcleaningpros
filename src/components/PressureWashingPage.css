@@ -1,0 +1,650 @@
+/* =========================================================
+   PRESSURE WASHING PAGE
+   ========================================================= */
+
+.pressure-cleaning-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.pressure-cleaning-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 680px;
+  padding: 110px 6%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.pressure-cleaning-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pressure-cleaning-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 37, 61, 0.94) 0%,
+    rgba(13, 47, 77, 0.87) 38%,
+    rgba(13, 47, 77, 0.5) 67%,
+    rgba(13, 47, 77, 0.16) 100%
+  );
+}
+
+.pressure-cleaning-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(255, 255, 255, 0.12),
+    transparent 38%
+  );
+}
+
+.pressure-cleaning-hero-content {
+  width: min(720px, 100%);
+  color: #ffffff;
+}
+
+.pressure-cleaning-eyebrow,
+.pressure-section-eyebrow,
+.pressure-cleaning-cta-eyebrow {
+  margin: 0 0 18px;
+  color: #ffd45a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.pressure-cleaning-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.pressure-cleaning-title span {
+  display: block;
+}
+
+.pressure-cleaning-description {
+  max-width: 660px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.pressure-cleaning-hero-actions,
+.pressure-cleaning-cta-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.pressure-cleaning-primary-button,
+.pressure-cleaning-secondary-button,
+.pressure-cleaning-cta-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pressure-cleaning-primary-button {
+  border: 2px solid #f9b500;
+  background: #f9b500;
+  color: #173f66;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+.pressure-cleaning-primary-button:hover {
+  transform: translateY(-3px);
+  border-color: #ffd04a;
+  background: #ffd04a;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+}
+
+.pressure-cleaning-secondary-button,
+.pressure-cleaning-cta-phone {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+}
+
+.pressure-cleaning-secondary-button:hover,
+.pressure-cleaning-cta-phone:hover {
+  transform: translateY(-3px);
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #173f66;
+}
+
+.pressure-cleaning-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.pressure-cleaning-trust-row span {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   SERVICE INTRO
+   ========================================================= */
+
+.pressure-recurring-intro {
+  padding: 100px 20px 30px;
+  background: #f4f7fa;
+}
+
+.pressure-recurring-intro-inner {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pressure-section-eyebrow {
+  color: #f9b500;
+}
+
+.pressure-recurring-intro h2,
+.pressure-cleaning-details-content h2,
+.pressure-cleaning-why h2,
+.pressure-commercial-content h2,
+.pressure-cleaning-cta h2 {
+  margin: 0;
+  color: #173f66;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  text-transform: uppercase;
+}
+
+.pressure-recurring-intro h2 span,
+.pressure-cleaning-details-content h2 span,
+.pressure-cleaning-why h2 span,
+.pressure-commercial-content h2 span,
+.pressure-cleaning-cta h2 span {
+  display: block;
+}
+
+.pressure-recurring-intro-inner > p:last-child {
+  max-width: 760px;
+  margin: 24px auto 0;
+  color: #536170;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   RESIDENTIAL PRESSURE WASHING DETAILS
+   ========================================================= */
+
+.pressure-cleaning-details {
+  padding: 110px 24px;
+  background: #ffffff;
+}
+
+.pressure-cleaning-details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 70px;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.pressure-cleaning-details-image-wrapper {
+  min-height: 680px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 22px 55px rgba(13, 47, 77, 0.15);
+}
+
+.pressure-cleaning-details-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.pressure-cleaning-details-image-wrapper:hover
+  .pressure-cleaning-details-image {
+  transform: scale(1.035);
+}
+
+.pressure-cleaning-details-content
+  > p:not(.pressure-section-eyebrow) {
+  margin: 22px 0 0;
+  color: #536170;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.pressure-cleaning-benefits,
+.pressure-commercial-benefits {
+  display: grid;
+  gap: 16px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pressure-cleaning-benefits li,
+.pressure-commercial-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  color: #3d4856;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.pressure-cleaning-benefits li span,
+.pressure-commercial-benefits li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f9b500;
+  color: #173f66;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.pressure-details-button {
+  margin-top: 34px;
+  padding: 17px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #173f66;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pressure-details-button:hover {
+  transform: translateY(-3px);
+  background: #0d2f4d;
+  box-shadow: 0 13px 28px rgba(13, 47, 77, 0.22);
+}
+
+/* =========================================================
+   SERVICE CARDS / WHY CHOOSE OUTSHINE
+   ========================================================= */
+
+.pressure-cleaning-why {
+  padding: 110px 24px;
+  background: #f4f7fa;
+}
+
+.pressure-cleaning-why-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pressure-cleaning-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 52px;
+}
+
+.pressure-cleaning-why-card {
+  padding: 34px 28px;
+  border: 1px solid rgba(23, 63, 102, 0.1);
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: left;
+  box-shadow: 0 14px 35px rgba(13, 47, 77, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pressure-cleaning-why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(13, 47, 77, 0.13);
+}
+
+.pressure-cleaning-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f9b500;
+  color: #173f66;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.pressure-cleaning-why-card h3 {
+  margin: 24px 0 0;
+  color: #173f66;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.pressure-cleaning-why-card p {
+  margin: 14px 0 0;
+  color: #536170;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.pressure-why-outshine {
+  background: #f4f7fa;
+}
+
+/* =========================================================
+   COMMERCIAL PRESSURE WASHING
+   ========================================================= */
+
+.pressure-commercial-section {
+  padding: 110px 24px;
+  background: #ffffff;
+}
+
+.pressure-commercial-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 70px;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.pressure-commercial-content
+  > p:not(.pressure-section-eyebrow) {
+  margin: 22px 0 0;
+  color: #536170;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.pressure-commercial-image-wrapper {
+  min-height: 620px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 22px 55px rgba(13, 47, 77, 0.15);
+}
+
+.pressure-commercial-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.pressure-commercial-image-wrapper:hover
+  .pressure-commercial-image {
+  transform: scale(1.035);
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.pressure-cleaning-cta {
+  padding: 110px 24px;
+  background: linear-gradient(
+    135deg,
+    #0d2f4d 0%,
+    #173f66 58%,
+    #285477 100%
+  );
+}
+
+.pressure-cleaning-cta-content {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pressure-cleaning-cta h2 {
+  color: #ffffff;
+}
+
+.pressure-cleaning-cta-content
+  > p:not(.pressure-cleaning-cta-eyebrow) {
+  max-width: 700px;
+  margin: 26px auto 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.pressure-cleaning-cta-actions {
+  justify-content: center;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.pressure-cleaning-primary-button:focus-visible,
+.pressure-cleaning-secondary-button:focus-visible,
+.pressure-cleaning-cta-phone:focus-visible,
+.pressure-details-button:focus-visible {
+  outline: 3px solid #ffd45a;
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .pressure-cleaning-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 950px) {
+  .pressure-cleaning-hero {
+    min-height: 620px;
+  }
+
+  .pressure-cleaning-details-grid,
+  .pressure-commercial-grid {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .pressure-cleaning-details-image-wrapper,
+  .pressure-cleaning-details-image,
+  .pressure-commercial-image-wrapper,
+  .pressure-commercial-image {
+    min-height: 500px;
+  }
+
+  .pressure-commercial-content {
+    order: 2;
+  }
+
+  .pressure-commercial-image-wrapper {
+    order: 1;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .pressure-cleaning-hero {
+    min-height: 700px;
+    align-items: flex-end;
+    padding: 80px 20px 55px;
+  }
+
+  .pressure-cleaning-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(13, 47, 77, 0.2) 0%,
+      rgba(13, 47, 77, 0.73) 42%,
+      rgba(8, 37, 61, 0.97) 100%
+    );
+  }
+
+  .pressure-cleaning-hero-image {
+    object-position: 58% center;
+  }
+
+  .pressure-cleaning-title {
+    font-size: clamp(2.8rem, 13vw, 4.3rem);
+  }
+
+  .pressure-cleaning-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .pressure-cleaning-hero-actions,
+  .pressure-cleaning-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pressure-cleaning-primary-button,
+  .pressure-cleaning-secondary-button,
+  .pressure-cleaning-cta-phone {
+    width: 100%;
+  }
+
+  .pressure-cleaning-trust-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pressure-recurring-intro {
+    padding: 75px 18px 20px;
+  }
+
+  .pressure-recurring-intro h2,
+  .pressure-cleaning-details-content h2,
+  .pressure-cleaning-why h2,
+  .pressure-commercial-content h2,
+  .pressure-cleaning-cta h2 {
+    font-size: clamp(2.3rem, 11vw, 3.4rem);
+  }
+
+  .pressure-recurring-intro-inner > p:last-child {
+    font-size: 1rem;
+  }
+
+  .pressure-cleaning-details,
+  .pressure-commercial-section {
+    padding: 75px 18px;
+  }
+
+  .pressure-cleaning-details-grid,
+  .pressure-commercial-grid {
+    gap: 42px;
+  }
+
+  .pressure-cleaning-details-image-wrapper,
+  .pressure-cleaning-details-image,
+  .pressure-commercial-image-wrapper,
+  .pressure-commercial-image {
+    min-height: 380px;
+    border-radius: 20px;
+  }
+
+  .pressure-cleaning-why {
+    padding: 80px 18px;
+  }
+
+  .pressure-cleaning-why-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .pressure-cleaning-why-card {
+    padding: 30px 24px;
+  }
+
+  .pressure-cleaning-cta {
+    padding: 80px 18px;
+  }
+}

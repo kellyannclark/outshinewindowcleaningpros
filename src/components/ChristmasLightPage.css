@@ -1,0 +1,764 @@
+/* =========================================================
+   CHRISTMAS LIGHT PAGE
+   ========================================================= */
+
+.christmas-light-page {
+  --christmas-green: #123d27;
+  --christmas-green-light: #1b5a37;
+  --christmas-green-dark: #0c2f1e;
+  --christmas-red: #b5242a;
+  --christmas-red-light: #d2363d;
+  --christmas-red-dark: #7b1e23;
+  --christmas-gold: #ffd95a;
+  --christmas-cream: #fffaf0;
+  --christmas-text: #39463f;
+  --christmas-muted: #647068;
+
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.christmas-light-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 720px;
+  padding: 115px 6%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.christmas-light-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.christmas-light-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 43, 27, 0.97) 0%,
+    rgba(18, 61, 39, 0.91) 36%,
+    rgba(73, 22, 25, 0.65) 72%,
+    rgba(73, 22, 25, 0.22) 100%
+  );
+}
+
+.christmas-light-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 17% 22%,
+      rgba(255, 255, 255, 0.2) 0 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 32% 12%,
+      rgba(255, 217, 90, 0.22) 0 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 76% 23%,
+      rgba(255, 255, 255, 0.18) 0 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 85% 62%,
+      rgba(255, 217, 90, 0.16) 0 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 53% 72%,
+      rgba(255, 255, 255, 0.12) 0 2px,
+      transparent 3px
+    );
+}
+
+.christmas-light-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 22% 35%,
+      rgba(255, 255, 255, 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 78% 30%,
+      rgba(255, 217, 90, 0.11),
+      transparent 23%
+    ),
+    radial-gradient(
+      circle at 67% 78%,
+      rgba(181, 36, 42, 0.13),
+      transparent 28%
+    );
+}
+
+.christmas-light-hero-content {
+  width: min(760px, 100%);
+  color: #ffffff;
+}
+
+.christmas-light-eyebrow,
+.christmas-section-eyebrow,
+.christmas-light-cta-eyebrow {
+  margin: 0 0 18px;
+  color: var(--christmas-gold);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.christmas-light-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.christmas-light-title span {
+  display: block;
+}
+
+.christmas-highlight {
+  color: var(--christmas-gold);
+}
+
+.christmas-light-description {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.christmas-light-hero-actions,
+.christmas-light-cta-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.christmas-light-primary-button,
+.christmas-light-secondary-button,
+.christmas-light-cta-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.96rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.christmas-light-primary-button {
+  border: 2px solid var(--christmas-red);
+  background: var(--christmas-red);
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(63, 10, 15, 0.3);
+}
+
+.christmas-light-primary-button:hover {
+  transform: translateY(-3px);
+  border-color: var(--christmas-red-light);
+  background: var(--christmas-red-light);
+  box-shadow: 0 20px 42px rgba(63, 10, 15, 0.38);
+}
+
+.christmas-light-secondary-button,
+.christmas-light-cta-phone {
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+}
+
+.christmas-light-secondary-button:hover,
+.christmas-light-cta-phone:hover {
+  transform: translateY(-3px);
+  border-color: #ffffff;
+  background: #ffffff;
+  color: var(--christmas-green);
+}
+
+.christmas-light-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.christmas-light-trust-row span {
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.christmas-light-intro {
+  padding: 100px 20px;
+  background: var(--christmas-cream);
+}
+
+.christmas-light-intro-inner {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.christmas-section-eyebrow {
+  color: var(--christmas-red);
+}
+
+.christmas-light-intro h2,
+.christmas-light-details-content h2,
+.christmas-light-services h2,
+.christmas-tree-content h2,
+.christmas-commercial-content h2,
+.christmas-light-why h2,
+.christmas-light-cta h2 {
+  margin: 0;
+  color: var(--christmas-green);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  text-transform: uppercase;
+}
+
+.christmas-light-intro h2 span,
+.christmas-light-details-content h2 span,
+.christmas-light-services h2 span,
+.christmas-tree-content h2 span,
+.christmas-commercial-content h2 span,
+.christmas-light-why h2 span,
+.christmas-light-cta h2 span {
+  display: block;
+}
+
+.christmas-light-intro-inner > p:last-child {
+  max-width: 780px;
+  margin: 24px auto 0;
+  color: var(--christmas-muted);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   RESIDENTIAL DETAILS
+   ========================================================= */
+
+.christmas-light-details {
+  padding: 110px 24px;
+  background: #ffffff;
+}
+
+.christmas-light-details-grid,
+.christmas-tree-grid,
+.christmas-commercial-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 70px;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.christmas-light-details-image-wrapper,
+.christmas-tree-image-wrapper,
+.christmas-commercial-image-wrapper {
+  min-height: 650px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 22px 55px rgba(12, 47, 30, 0.16);
+}
+
+.christmas-light-details-image,
+.christmas-tree-image,
+.christmas-commercial-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.christmas-light-details-image-wrapper:hover
+  .christmas-light-details-image,
+.christmas-tree-image-wrapper:hover
+  .christmas-tree-image,
+.christmas-commercial-image-wrapper:hover
+  .christmas-commercial-image {
+  transform: scale(1.035);
+}
+
+.christmas-light-details-content
+  > p:not(.christmas-section-eyebrow),
+.christmas-tree-content
+  > p:not(.christmas-section-eyebrow),
+.christmas-commercial-content
+  > p:not(.christmas-section-eyebrow) {
+  margin: 22px 0 0;
+  color: var(--christmas-muted);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.christmas-light-benefits,
+.christmas-tree-benefits,
+.christmas-commercial-benefits {
+  display: grid;
+  gap: 16px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.christmas-light-benefits li,
+.christmas-tree-benefits li,
+.christmas-commercial-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  color: var(--christmas-text);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.christmas-light-benefits li span,
+.christmas-tree-benefits li span,
+.christmas-commercial-benefits li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--christmas-green-light);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.christmas-details-button {
+  margin-top: 34px;
+  padding: 17px 25px;
+  border: none;
+  border-radius: 10px;
+  background: var(--christmas-red);
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.christmas-details-button:hover {
+  transform: translateY(-3px);
+  background: var(--christmas-red-light);
+  box-shadow: 0 13px 28px rgba(123, 30, 35, 0.28);
+}
+
+/* =========================================================
+   SERVICE CARDS
+   ========================================================= */
+
+.christmas-light-services {
+  padding: 110px 24px;
+  background: var(--christmas-green-dark);
+}
+
+.christmas-light-services-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.christmas-light-services h2 {
+  color: #ffffff;
+}
+
+.christmas-light-services .christmas-section-eyebrow {
+  color: var(--christmas-gold);
+}
+
+.christmas-light-services-grid,
+.christmas-light-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 52px;
+}
+
+.christmas-light-service-card,
+.christmas-light-why-card {
+  padding: 34px 28px;
+  border: 1px solid rgba(255, 217, 90, 0.18);
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: left;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.christmas-light-service-card:hover,
+.christmas-light-why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 21px 45px rgba(0, 0, 0, 0.2);
+}
+
+.christmas-light-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--christmas-red);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.christmas-light-service-card h3,
+.christmas-light-why-card h3 {
+  margin: 24px 0 0;
+  color: var(--christmas-green);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.christmas-light-service-card p,
+.christmas-light-why-card p {
+  margin: 14px 0 0;
+  color: var(--christmas-muted);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   TREE WRAPPING
+   ========================================================= */
+
+.christmas-tree-section {
+  padding: 110px 24px;
+  background: var(--christmas-cream);
+}
+
+/* =========================================================
+   COMMERCIAL
+   ========================================================= */
+
+.christmas-commercial-section {
+  padding: 110px 24px;
+  background: #ffffff;
+}
+
+/* =========================================================
+   WHY CHOOSE OUTSHINE
+   ========================================================= */
+
+.christmas-light-why {
+  padding: 110px 24px;
+  background: #f4f7f3;
+}
+
+.christmas-light-why-inner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.christmas-light-why-card {
+  border-color: rgba(18, 61, 39, 0.12);
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.christmas-light-cta {
+  position: relative;
+  padding: 115px 24px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--christmas-green-dark) 0%,
+    var(--christmas-green-light) 55%,
+    var(--christmas-red-dark) 100%
+  );
+}
+
+.christmas-light-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(255, 255, 255, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 35%,
+      rgba(255, 217, 90, 0.12),
+      transparent 23%
+    );
+}
+
+.christmas-light-cta-content {
+  position: relative;
+  z-index: 1;
+  width: min(980px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.christmas-light-cta h2 {
+  color: #ffffff;
+}
+
+.christmas-light-cta-content
+  > p:not(.christmas-light-cta-eyebrow) {
+  max-width: 720px;
+  margin: 26px auto 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.christmas-light-cta-actions {
+  justify-content: center;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.christmas-light-primary-button:focus-visible,
+.christmas-light-secondary-button:focus-visible,
+.christmas-light-cta-phone:focus-visible,
+.christmas-details-button:focus-visible {
+  outline: 3px solid var(--christmas-gold);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .christmas-light-services-grid,
+  .christmas-light-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 950px) {
+  .christmas-light-hero {
+    min-height: 660px;
+  }
+
+  .christmas-light-details-grid,
+  .christmas-tree-grid,
+  .christmas-commercial-grid {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .christmas-light-details-image-wrapper,
+  .christmas-light-details-image,
+  .christmas-tree-image-wrapper,
+  .christmas-tree-image,
+  .christmas-commercial-image-wrapper,
+  .christmas-commercial-image {
+    min-height: 500px;
+  }
+
+  .christmas-tree-content {
+    order: 2;
+  }
+
+  .christmas-tree-image-wrapper {
+    order: 1;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .christmas-light-hero {
+    min-height: 740px;
+    align-items: flex-end;
+    padding: 85px 20px 55px;
+  }
+
+  .christmas-light-hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 61, 39, 0.23) 0%,
+      rgba(18, 61, 39, 0.76) 42%,
+      rgba(10, 43, 27, 0.98) 100%
+    );
+  }
+
+  .christmas-light-hero-image {
+    object-position: 58% center;
+  }
+
+  .christmas-light-title {
+    font-size: clamp(2.75rem, 13vw, 4.25rem);
+  }
+
+  .christmas-light-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .christmas-light-hero-actions,
+  .christmas-light-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .christmas-light-primary-button,
+  .christmas-light-secondary-button,
+  .christmas-light-cta-phone {
+    width: 100%;
+  }
+
+  .christmas-light-trust-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .christmas-light-intro {
+    padding: 75px 18px;
+  }
+
+  .christmas-light-intro h2,
+  .christmas-light-details-content h2,
+  .christmas-light-services h2,
+  .christmas-tree-content h2,
+  .christmas-commercial-content h2,
+  .christmas-light-why h2,
+  .christmas-light-cta h2 {
+    font-size: clamp(2.3rem, 11vw, 3.4rem);
+  }
+
+  .christmas-light-intro-inner > p:last-child {
+    font-size: 1rem;
+  }
+
+  .christmas-light-details,
+  .christmas-tree-section,
+  .christmas-commercial-section {
+    padding: 75px 18px;
+  }
+
+  .christmas-light-details-grid,
+  .christmas-tree-grid,
+  .christmas-commercial-grid {
+    gap: 42px;
+  }
+
+  .christmas-light-details-image-wrapper,
+  .christmas-light-details-image,
+  .christmas-tree-image-wrapper,
+  .christmas-tree-image,
+  .christmas-commercial-image-wrapper,
+  .christmas-commercial-image {
+    min-height: 380px;
+    border-radius: 20px;
+  }
+
+  .christmas-light-services,
+  .christmas-light-why {
+    padding: 80px 18px;
+  }
+
+  .christmas-light-services-grid,
+  .christmas-light-why-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .christmas-light-service-card,
+  .christmas-light-why-card {
+    padding: 30px 24px;
+  }
+
+  .christmas-light-cta {
+    padding: 85px 18px;
+  }
+}

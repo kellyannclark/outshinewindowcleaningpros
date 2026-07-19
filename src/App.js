@@ -17,6 +17,11 @@ import ReviewPage from "./components/ReviewPage";
 import ExteriorWindowPage from "./components/ExteriorWindowPage";
 import InteriorWindowPage from "./components/InteriorWindowPage";
 import ScreenCleaningPage from "./components/ScreenCleaningPage";
+import TrackDetailingPage from "./components/TrackDetailingPage";
+import SolarPanelCleaningPage from "./components/SolarPanelCleaningPage";
+import GutterCleaningPage from "./components/GutterCleaningPage";
+import PressureWashingPage from "./components/PressureWashingPage";
+import ChristmasLightPage from "./components/ChristmasLightPage";
 
 import "./App.css";
 import "./index.css";
@@ -62,6 +67,31 @@ function App() {
           path="/screen-cleaning"
           element={<ScreenCleaningPage />}
         />
+
+        <Route
+        path="/track-detailing"
+        element={<TrackDetailingPage />}
+      />
+
+      <Route
+        path="/solar-panel-cleaning"
+        element={<SolarPanelCleaningPage />}
+      />
+
+      <Route
+        path="/gutter-cleaning"
+        element={<GutterCleaningPage />}
+      />
+
+      <Route
+        path="/pressure-washing"
+        element={<PressureWashingPage />}
+      />
+
+      <Route
+        path="/christmas-lights"
+        element={<ChristmasLightPage />}
+      />
       </Routes>
 
       <Footer />

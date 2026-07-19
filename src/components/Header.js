@@ -51,16 +51,8 @@ const Header = () => {
     closeMenus();
   };
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-
+  const callOutshine = () => {
+    window.location.href = "tel:8016618232";
     closeMenus();
   };
 
@@ -127,14 +119,14 @@ const Header = () => {
                 Exterior Window Cleaning
               </button>
 
-            <button
-              type="button"
-              onClick={() =>
-                navigateTo("/interior-window-cleaning")
-              }
-            >
-              Interior Window Cleaning
-            </button>
+              <button
+                type="button"
+                onClick={() =>
+                  navigateTo("/interior-window-cleaning")
+                }
+              >
+                Interior Window Cleaning
+              </button>
 
               <button
                 type="button"
@@ -145,7 +137,7 @@ const Header = () => {
 
               <button
                 type="button"
-                onClick={() => scrollToSection("track-detailing")}
+                onClick={() => navigateTo("/track-detailing")}
               >
                 Track Detailing
               </button>
@@ -153,7 +145,7 @@ const Header = () => {
               <button
                 type="button"
                 onClick={() =>
-                  scrollToSection("solar-panel-cleaning")
+                  navigateTo("/solar-panel-cleaning")
                 }
               >
                 Solar Panel Cleaning
@@ -161,23 +153,23 @@ const Header = () => {
 
               <button
                 type="button"
-                onClick={() => scrollToSection("gutter-cleaning")}
+                onClick={() => navigateTo("/gutter-cleaning")}
               >
                 Gutter Cleaning
               </button>
 
               <button
                 type="button"
-                onClick={() => scrollToSection("pressure-washing")}
+                onClick={() => navigateTo("/pressure-washing")}
               >
                 Pressure Washing
               </button>
 
               <button
                 type="button"
-                onClick={() => scrollToSection("christmas-lights")}
+                onClick={() => navigateTo("/christmas-lights")}
               >
-                Christmas Light Installation
+                Christmas Lights
               </button>
             </div>
           </div>
@@ -193,9 +185,7 @@ const Header = () => {
           <button
             type="button"
             className="header-quote-button hero-call-button"
-            onClick={() => {
-              window.location.href = "tel:8016618232";
-            }}
+            onClick={callOutshine}
           >
             <svg
               className="button-phone-icon"
@@ -258,6 +248,7 @@ const Header = () => {
               aria-controls="mobile-services-list"
             >
               <span>Our Services</span>
+
               <span aria-hidden="true">
                 {servicesOpen ? "−" : "+"}
               </span>
@@ -291,18 +282,14 @@ const Header = () => {
 
               <button
                 type="button"
-                onClick={() =>
-                  scrollToSection("screen-cleaning")
-                }
+                onClick={() => navigateTo("/screen-cleaning")}
               >
                 Screen Cleaning Services
               </button>
 
               <button
                 type="button"
-                onClick={() =>
-                  scrollToSection("track-detailing")
-                }
+                onClick={() => navigateTo("/track-detailing")}
               >
                 Track Detailing
               </button>
@@ -310,7 +297,7 @@ const Header = () => {
               <button
                 type="button"
                 onClick={() =>
-                  scrollToSection("solar-panel-cleaning")
+                  navigateTo("/solar-panel-cleaning")
                 }
               >
                 Solar Panel Cleaning
@@ -318,29 +305,23 @@ const Header = () => {
 
               <button
                 type="button"
-                onClick={() =>
-                  scrollToSection("gutter-cleaning")
-                }
+                onClick={() => navigateTo("/gutter-cleaning")}
               >
                 Gutter Cleaning
               </button>
 
               <button
                 type="button"
-                onClick={() =>
-                  scrollToSection("pressure-washing")
-                }
+                onClick={() => navigateTo("/pressure-washing")}
               >
                 Pressure Washing
               </button>
 
               <button
                 type="button"
-                onClick={() =>
-                  scrollToSection("christmas-lights")
-                }
+                onClick={() => navigateTo("/christmas-lights")}
               >
-                Christmas Light Installation
+                Christmas Lights
               </button>
             </div>
 
@@ -357,6 +338,14 @@ const Header = () => {
               onClick={() => navigateTo("/quote")}
             >
               Get a Free Quote
+            </button>
+
+            <button
+              type="button"
+              className="mobile-call-button"
+              onClick={callOutshine}
+            >
+              Call Us
             </button>
           </nav>
         </div>
