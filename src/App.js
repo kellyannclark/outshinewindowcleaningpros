@@ -1,19 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ReviewPage from "./components/ReviewPage";
-
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 import Hero from "./components/Hero";
 import ServicesSection from "./components/ServicesSection";
-
-import Footer from "./components/Footer";
-import About from "./components/About";
 import RecurringPlans from "./components/RecurringPlans";
 import ReviewsSection from "./components/ReviewsSection";
 import ServiceAreasSection from "./components/ServiceAreasSection";
 import FinalCTASection from "./components/FinalCTASection";
+
+import About from "./components/About";
 import QuotePage from "./components/QuotePage";
+import ReviewPage from "./components/ReviewPage";
+import ExteriorWindowPage from "./components/ExteriorWindowPage";
+import InteriorWindowPage from "./components/InteriorWindowPage";
+import ScreenCleaningPage from "./components/ScreenCleaningPage";
+
 import "./App.css";
 import "./index.css";
 
@@ -23,71 +27,45 @@ function HomePage() {
       <Hero />
 
       <div className="site-container">
-        {/* Our Services Header */}
-
-
         <ServicesSection />
         <RecurringPlans />
         <ReviewsSection />
         <ServiceAreasSection />
         <FinalCTASection />
-
-
-
-
-        {/* Contact Form Section */}
-        <section
-          id="contact"
-          style={{
-            padding: "80px 20px",
-            backgroundColor: "#f5fafe",
-          }}
-        >
-
-
-
-        </section>
       </div>
     </>
   );
 }
 
 function App() {
-  useEffect(() => {
-    const handleScroll = () => {
-      const topBar = document.querySelector(".top-bar");
-
-      if (!topBar) return;
-
-      if (window.scrollY > 30) {
-        topBar.classList.add("hidden");
-      } else {
-        topBar.classList.remove("hidden");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-   
-      <div className="App">
-        <Header />
+    <div className="App">
+      <Header />
 
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/quote" element={<QuotePage />} />
-          <Route path="/reviews" element={<ReviewPage />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/quote" element={<QuotePage />} />
+        <Route path="/reviews" element={<ReviewPage />} />
 
-        <Footer />
-      </div>
+        <Route
+          path="/exterior-window-cleaning"
+          element={<ExteriorWindowPage />}
+        />
 
+        <Route
+          path="/interior-window-cleaning"
+          element={<InteriorWindowPage />}
+        />
+
+        <Route
+          path="/screen-cleaning"
+          element={<ScreenCleaningPage />}
+        />
+      </Routes>
+
+      <Footer />
+    </div>
   );
 }
 

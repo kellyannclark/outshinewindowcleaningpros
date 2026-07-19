@@ -4,21 +4,31 @@ import "./Header.css";
 
 const Header = () => {
   const navigate = useNavigate();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
+  const desktopServicesRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      const clickedOutsideMenu =
-        menuRef.current && !menuRef.current.contains(event.target);
+      const clickedOutsideMobileMenu =
+        !menuRef.current || !menuRef.current.contains(event.target);
 
       const clickedOutsideToggle =
-        toggleRef.current && !toggleRef.current.contains(event.target);
+        !toggleRef.current || !toggleRef.current.contains(event.target);
 
-      if (clickedOutsideMenu && clickedOutsideToggle) {
+      const clickedOutsideDesktopServices =
+        !desktopServicesRef.current ||
+        !desktopServicesRef.current.contains(event.target);
+
+      if (
+        clickedOutsideMobileMenu &&
+        clickedOutsideToggle &&
+        clickedOutsideDesktopServices
+      ) {
         setMenuOpen(false);
         setServicesOpen(false);
       }
@@ -36,6 +46,11 @@ const Header = () => {
     setServicesOpen(false);
   };
 
+  const navigateTo = (path) => {
+    navigate(path);
+    closeMenus();
+  };
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
 
@@ -50,264 +65,303 @@ const Header = () => {
   };
 
   return (
-    <>
+    <header className="header">
+      <div className="header-container">
+        <button
+          type="button"
+          className="logo-link"
+          aria-label="Outshine Window Cleaning Pros home"
+          onClick={() => navigateTo("/")}
+        >
+          <img
+            src="/logo1.png"
+            alt="Outshine Window Cleaning Pros"
+            className="logo"
+          />
+        </button>
 
-
-      <header className="header">
-        <div className="header-container">
-          <a
-            href="/"
-            className="logo-link"
-            aria-label="Outshine Window Cleaning Pros home"
-          >
-            <img
-              src="/logo1.png"
-              alt="Outshine Window Cleaning Pros"
-              className="logo"
-            />
-          </a>
-
-          <nav className="desktop-nav" aria-label="Main navigation">
+        <nav className="desktop-nav" aria-label="Main navigation">
           <button
             type="button"
             className="nav-link"
-            onClick={() => navigate("/about")}
+            onClick={() => navigateTo("/about")}
           >
             About Us
           </button>
 
-            <div className="desktop-services-menu">
+          <div
+            className="desktop-services-menu"
+            ref={desktopServicesRef}
+          >
+            <button
+              type="button"
+              className="nav-link services-trigger"
+              onClick={() => setServicesOpen((current) => !current)}
+              aria-expanded={servicesOpen}
+              aria-controls="desktop-services-dropdown"
+            >
+              Our Services
+
+              <span
+                className={`dropdown-arrow ${
+                  servicesOpen ? "dropdown-arrow-open" : ""
+                }`}
+                aria-hidden="true"
+              >
+                ▾
+              </span>
+            </button>
+
+            <div
+              id="desktop-services-dropdown"
+              className={`services-dropdown ${
+                servicesOpen ? "services-dropdown-active" : ""
+              }`}
+            >
               <button
                 type="button"
-                className="nav-link services-trigger"
-                onClick={() => setServicesOpen((current) => !current)}
-                aria-expanded={servicesOpen}
+                onClick={() =>
+                  navigateTo("/exterior-window-cleaning")
+                }
               >
-                Our Services
-                <span
-                  className={`dropdown-arrow ${
-                    servicesOpen ? "dropdown-arrow-open" : ""
-                  }`}
-                  aria-hidden="true"
-                >
-                  ▾
-                </span>
+                Exterior Window Cleaning
               </button>
 
-              <div
-                className={`services-dropdown ${
-                  servicesOpen ? "services-dropdown-active" : ""
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("exterior-window-cleaning")}
-                >
-                  Exterior Window Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("interior-window-cleaning")}
-                >
-                  Interior Window Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("screen-cleaning")}
-                >
-                  Screen Cleaning Services
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("track-detailing")}
-                >
-                  Track Detailing
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("solar-panel-cleaning")}
-                >
-                  Solar Panel Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("gutter-cleaning")}
-                >
-                  Gutter Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("pressure-washing")}
-                >
-                  Pressure Washing
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("christmas-lights")}
-                >
-                  Christmas Light Installation
-                </button>
-              </div>
-            </div>
-
             <button
+              type="button"
+              onClick={() =>
+                navigateTo("/interior-window-cleaning")
+              }
+            >
+              Interior Window Cleaning
+            </button>
+
+              <button
+                type="button"
+                onClick={() => navigateTo("/screen-cleaning")}
+              >
+                Screen Cleaning Services
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollToSection("track-detailing")}
+              >
+                Track Detailing
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  scrollToSection("solar-panel-cleaning")
+                }
+              >
+                Solar Panel Cleaning
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollToSection("gutter-cleaning")}
+              >
+                Gutter Cleaning
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollToSection("pressure-washing")}
+              >
+                Pressure Washing
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollToSection("christmas-lights")}
+              >
+                Christmas Light Installation
+              </button>
+            </div>
+          </div>
+
+          <button
             type="button"
             className="nav-link"
-            onClick={() => navigate("/reviews")}
+            onClick={() => navigateTo("/reviews")}
           >
             Reviews
           </button>
 
+          <button
+            type="button"
+            className="header-quote-button hero-call-button"
+            onClick={() => {
+              window.location.href = "tel:8016618232";
+            }}
+          >
+            <svg
+              className="button-phone-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.78.68 2.62a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.45-1.19a2 2 0 0 1 2.11-.45c.84.33 1.72.56 2.62.68A2 2 0 0 1 22 16.92z" />
+            </svg>
+
+            <span>Call Us</span>
+          </button>
+        </nav>
+
+        <div className="mobile-menu-wrapper">
+          <button
+            type="button"
+            className="menu-toggle"
+            ref={toggleRef}
+            onClick={() => {
+              setMenuOpen((current) => !current);
+              setServicesOpen(false);
+            }}
+            aria-label={
+              menuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+
+          <nav
+            ref={menuRef}
+            className={`mobile-nav ${
+              menuOpen ? "mobile-nav-active" : ""
+            }`}
+            aria-label="Mobile navigation"
+          >
             <button
               type="button"
-              className="header-quote-button hero-call-button"
-              onClick={() => (window.location.href = "tel:8016618232")}
+              onClick={() => navigateTo("/about")}
             >
-              <svg
-                className="button-phone-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.35 1.78.68 2.62a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.45-1.19a2 2 0 0 1 2.11-.45c.84.33 1.72.56 2.62.68A2 2 0 0 1 22 16.92z" />
-              </svg>
+              About Us
+            </button>
 
-              <span>Call Us</span>
+            <button
+              type="button"
+              className="mobile-services-trigger"
+              onClick={() =>
+                setServicesOpen((current) => !current)
+              }
+              aria-expanded={servicesOpen}
+              aria-controls="mobile-services-list"
+            >
+              <span>Our Services</span>
+              <span aria-hidden="true">
+                {servicesOpen ? "−" : "+"}
+              </span>
+            </button>
+
+            <div
+              id="mobile-services-list"
+              className={`mobile-services-list ${
+                servicesOpen
+                  ? "mobile-services-list-active"
+                  : ""
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() =>
+                  navigateTo("/exterior-window-cleaning")
+                }
+              >
+                Exterior Window Cleaning
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  navigateTo("/interior-window-cleaning")
+                }
+              >
+                Interior Window Cleaning
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  scrollToSection("screen-cleaning")
+                }
+              >
+                Screen Cleaning Services
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  scrollToSection("track-detailing")
+                }
+              >
+                Track Detailing
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  scrollToSection("solar-panel-cleaning")
+                }
+              >
+                Solar Panel Cleaning
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  scrollToSection("gutter-cleaning")
+                }
+              >
+                Gutter Cleaning
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  scrollToSection("pressure-washing")
+                }
+              >
+                Pressure Washing
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  scrollToSection("christmas-lights")
+                }
+              >
+                Christmas Light Installation
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => navigateTo("/reviews")}
+            >
+              Reviews
+            </button>
+
+            <button
+              type="button"
+              className="mobile-quote-button"
+              onClick={() => navigateTo("/quote")}
+            >
+              Get a Free Quote
             </button>
           </nav>
-
-
-
-          <div className="mobile-menu-wrapper">
-            <button
-              type="button"
-              className="menu-toggle"
-              ref={toggleRef}
-              onClick={() => {
-                setMenuOpen((current) => !current);
-                setServicesOpen(false);
-              }}
-              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={menuOpen}
-            >
-              {menuOpen ? "✕" : "☰"}
-            </button>
-
-            <nav
-              ref={menuRef}
-              className={`mobile-nav ${menuOpen ? "mobile-nav-active" : ""}`}
-              aria-label="Mobile navigation"
-            >
-              <button
-                type="button"
-                onClick={() => scrollToSection("about")}
-              >
-                About Us
-              </button>
-
-              <button
-                type="button"
-                className="mobile-services-trigger"
-                onClick={() => setServicesOpen((current) => !current)}
-                aria-expanded={servicesOpen}
-              >
-                <span>Our Services</span>
-                <span aria-hidden="true">{servicesOpen ? "−" : "+"}</span>
-              </button>
-
-              <div
-                className={`mobile-services-list ${
-                  servicesOpen ? "mobile-services-list-active" : ""
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("exterior-window-cleaning")}
-                >
-                  Exterior Window Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("interior-window-cleaning")}
-                >
-                  Interior Window Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("screen-cleaning")}
-                >
-                  Screen Cleaning Services
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("track-detailing")}
-                >
-                  Track Detailing
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("solar-panel-cleaning")}
-                >
-                  Solar Panel Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("gutter-cleaning")}
-                >
-                  Gutter Cleaning
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("pressure-washing")}
-                >
-                  Pressure Washing
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => scrollToSection("christmas-lights")}
-                >
-                  Christmas Light Installation
-                </button>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => scrollToSection("reviews")}
-              >
-                Reviews
-              </button>
-
-              <button
-                type="button"
-                className="mobile-quote-button"
-                onClick={() => scrollToSection("contact")}
-              >
-                Get a Free Quote
-              </button>
-            </nav>
-          </div>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 
