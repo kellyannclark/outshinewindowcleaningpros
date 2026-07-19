@@ -153,3 +153,81 @@
     text-align: left;
   }
 }
+.review-page-hero {
+  position: relative;
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+.review-page-hero-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.review-page-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13,47,77,.55),
+      rgba(13,47,77,.72)
+    );
+}
+
+.review-page-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(980px,100%);
+  margin: auto;
+
+  text-align: center;
+}
+
+.review-page-eyebrow {
+  color: #f9b500;
+}
+
+.review-page-title {
+  color: white;
+}
+
+.review-page-description {
+  color: rgba(255,255,255,.92);
+}
+
+.review-page-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 30px;
+  padding: 18px 24px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.14);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.review-page-trust strong {
+  color: white;
+}
+
+.review-page-trust span {
+  color: rgba(255,255,255,.82);
+}
