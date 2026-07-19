@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -157,12 +158,12 @@ const Header = () => {
             </div>
 
             <button
-              type="button"
-              className="nav-link"
-              onClick={() => scrollToSection("reviews")}
-            >
-              Reviews
-            </button>
+            type="button"
+            className="nav-link"
+            onClick={() => navigate("/reviews")}
+          >
+            Reviews
+          </button>
 
             <button
               type="button"

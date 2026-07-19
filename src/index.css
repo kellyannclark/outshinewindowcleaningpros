@@ -192,34 +192,58 @@ textarea {
 
 .nav-link {
   position: relative;
+  display: inline-flex;
+  align-items: center;
   padding: 10px 0;
+  border: 0;
   background: transparent;
   color: var(--outshine-text);
   font-family: "Montserrat", sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  line-height: 1;
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 3px;
-  left: 0;
-  height: 2px;
-  background-color: var(--outshine-sky);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.2s ease;
+
+/* React Router navigation link reset */
+.header .desktop-nav a.nav-link,
+.header .desktop-nav a.nav-link:link,
+.header .desktop-nav a.nav-link:visited,
+.header .desktop-nav a.nav-link:hover,
+.header .desktop-nav a.nav-link:active,
+.header .desktop-nav a.nav-link:focus {
+  color: var(--outshine-text);
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
 }
 
-.nav-link:hover::after,
-.nav-link:focus-visible::after {
-  transform: scaleX(1);
+.header .desktop-nav .nav-link::before,
+.header .desktop-nav .nav-link::after {
+  content: none !important;
+  display: none !important;
 }
+
+.header .desktop-nav .nav-link:hover,
+.header .desktop-nav .nav-link:focus-visible {
+  color: var(--outshine-denim);
+  text-decoration: none !important;
+}
+
+.header .desktop-nav .nav-link:focus-visible {
+  outline: 2px solid var(--outshine-gold);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+
+
 
 .desktop-services-menu {
   position: relative;
@@ -2618,4 +2642,27 @@ textarea {
   .service-card-small .service-card-content h3 {
     font-size: 21px;
   }
+}
+
+/* =========================================================
+   FINAL HEADER LINK SAFETY OVERRIDE
+   Keep this block at the bottom of index.css.
+   ========================================================= */
+
+header.header nav.desktop-nav > a.nav-link,
+header.header nav.desktop-nav > a.nav-link:link,
+header.header nav.desktop-nav > a.nav-link:visited,
+header.header nav.desktop-nav > a.nav-link:hover,
+header.header nav.desktop-nav > a.nav-link:active,
+header.header nav.desktop-nav > a.nav-link:focus {
+  color: var(--outshine-text) !important;
+  text-decoration-line: none !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+header.header nav.desktop-nav > a.nav-link::before,
+header.header nav.desktop-nav > a.nav-link::after {
+  content: none !important;
+  display: none !important;
 }

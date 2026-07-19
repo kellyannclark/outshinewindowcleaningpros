@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import ReviewPage from "./components/ReviewPage";
 
 
 import Header from "./components/Header";
@@ -81,6 +82,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/quote" element={<QuotePage />} />
+          <Route path="/reviews" element={<ReviewPage />} />
         </Routes>
 
         <Footer />

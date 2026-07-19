@@ -1,0 +1,60 @@
+/* =========================================================
+   HEADER NAVIGATION
+   ========================================================= */
+
+.header .nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0;
+
+  border: none;
+  background: transparent;
+  color: #17212b;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  text-decoration: none !important;
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+/* Remove normal link styling in every state */
+
+.header a.nav-link,
+.header a.nav-link:link,
+.header a.nav-link:visited,
+.header a.nav-link:hover,
+.header a.nav-link:active,
+.header a.nav-link:focus {
+  color: #17212b;
+  text-decoration: none !important;
+}
+
+/* Remove the underline animation from navigation items */
+
+.header .nav-link::after {
+  display: none;
+  content: none;
+}
+
+/* Optional hover color */
+
+.header .nav-link:hover,
+.header .nav-link:focus-visible {
+  color: #173f66;
+  text-decoration: none !important;
+}
+
+/* Keyboard accessibility without an underline */
+
+.header .nav-link:focus-visible {
+  outline: 2px solid #f9b500;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
