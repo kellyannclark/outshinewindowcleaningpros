@@ -12,11 +12,19 @@ const Hero = () => {
       <div className="hero-overlay">
         <div className="hero-content">
           <div className="hero-review">
-            <span className="hero-stars" aria-hidden="true">
-              ★★★★★
-            </span>
 
-            <span>5-Star Rated • Trusted by Utah Homeowners</span>
+
+          <div className="hero-rating">
+            <img
+              src="/google-reviews.png"
+              alt="Google Reviews"
+              className="hero-google-logo"
+            />
+
+            <span className="hero-rating-text">
+              <strong>100+ Verified Google Reviews</strong>
+            </span>
+          </div>
           </div>
 
           <h1>

@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import RecurringPlans from "./components/RecurringPlans";
 import ReviewsSection from "./components/ReviewsSection";
+import ServiceAreasSection from "./components/ServiceAreasSection";
 import "./App.css";
 import "./index.css";
 
@@ -24,19 +25,9 @@ function HomePage() {
         <ServicesSection />
         <RecurringPlans />
         <ReviewsSection />
+        <ServiceAreasSection />
 
-        <div className="video-wrapper">
-          <div className="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/mMh0BPsMjuA?si=k7_tUCsRJkgVtcX6"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-        </div>
+
 
         {/* Contact Form Section */}
         <section
@@ -46,11 +37,9 @@ function HomePage() {
             backgroundColor: "#f5fafe",
           }}
         >
-          <h2 className="text-4xl text-center font-bold mb-8">
-            CONTACT US
-          </h2>
 
-          <ContactForm />
+
+
         </section>
       </div>
     </>

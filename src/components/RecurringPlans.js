@@ -38,7 +38,9 @@ const RecurringPlans = () => {
         <p className="services-eyebrow">Recurring Service</p>
 
         <h2 className="recurring-plans-title">
-          Save More. Shine All Year.
+          Save More.{" "}
+          <span className="outshine-word">SHINE</span>{" "}
+          All Year.
         </h2>
 
         <p className="recurring-plans-intro">

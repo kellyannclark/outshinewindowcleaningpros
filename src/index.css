@@ -1318,10 +1318,448 @@ textarea {
   max-width: 1200px;
   margin: 0 auto;
 }
+/* ================================
+   SERVICES HEADING
+================================ */
 
+.services-heading {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.services-eyebrow {
+  margin: 0 0 12px;
+
+  color: #f9b500;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.services-title {
+  margin: 0;
+
+  color: #173f66;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.services-title .outshine-word {
+  background: linear-gradient(
+    90deg,
+    #d79a00 0%,
+    #f9b500 35%,
+    #ffd95e 50%,
+    #f9b500 65%,
+    #d79a00 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-weight: 900;
+}
+
+/* =================================
+   SERVICE AREAS SECTION
+================================= */
+
+.service-areas-section {
+  padding: 100px 20px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244, 247, 250, 0.96),
+      rgba(255, 255, 255, 1)
+    );
+}
+
+.service-areas-heading {
+  max-width: 980px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.service-areas-eyebrow {
+  margin: 0 0 12px;
+
+  color: #f9b500;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.service-areas-title {
+  margin: 0;
+
+  color: #173f66;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.03;
+  text-transform: uppercase;
+}
+
+.service-areas-intro {
+  max-width: 760px;
+  margin: 22px auto 0;
+
+  color: #536170;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* =================================
+   MAP + CONTENT LAYOUT
+================================= */
+
+.service-areas-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 50px;
+
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.service-areas-map {
+  min-height: 590px;
+  overflow: hidden;
+
+  border: 1px solid rgba(23, 63, 102, 0.14);
+  border-radius: 26px;
+
+  background: #e9eef3;
+  box-shadow: 0 20px 50px rgba(23, 63, 102, 0.11);
+}
+
+.service-areas-map iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-height: 590px;
+
+  border: 0;
+}
+
+.service-areas-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =================================
+   RIGHT-SIDE HEADING
+================================= */
+
+.service-areas-state-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 24px;
+}
+
+.service-areas-state-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  background: #f9b500;
+  color: #173f66;
+
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.service-areas-state-heading p {
+  margin: 0 0 4px;
+
+  color: #f9b500;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service-areas-state-heading h3 {
+  margin: 0;
+
+  color: #173f66;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+/* =================================
+   COUNTY CARDS
+================================= */
+
+.service-area-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.service-area-card {
+  padding: 22px 24px;
+
+  border: 1px solid rgba(23, 63, 102, 0.12);
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-area-card:hover {
+  transform: translateX(5px);
+  border-color: rgba(23, 63, 102, 0.24);
+  box-shadow: 0 12px 28px rgba(23, 63, 102, 0.09);
+}
+
+.service-area-card-featured {
+  border-left: 6px solid #f9b500;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(249, 181, 0, 0.08),
+      #ffffff 55%
+    );
+}
+
+.service-area-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.service-area-label {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #6b7784;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.service-area-card h4 {
+  margin: 0;
+
+  color: #173f66;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.service-area-card p {
+  margin: 12px 0 0;
+
+  color: #536170;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.service-area-primary-badge {
+  flex-shrink: 0;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  background: #173f66;
+  color: #ffffff;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* =================================
+   SERVICE AREA CTA
+================================= */
+
+.service-areas-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-top: 26px;
+}
+
+.service-areas-footer p {
+  max-width: 340px;
+  margin: 0;
+
+  color: #536170;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.service-areas-button {
+  flex-shrink: 0;
+
+  padding: 15px 22px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #173f66;
+  color: #ffffff;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-areas-button:hover {
+  transform: translateY(-3px);
+  background: #0d2f4d;
+  box-shadow: 0 12px 26px rgba(23, 63, 102, 0.22);
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+  .service-areas-section {
+    padding: 80px 20px;
+  }
+
+  .service-areas-layout {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .service-areas-map {
+    min-height: 460px;
+  }
+
+  .service-areas-map iframe {
+    min-height: 460px;
+  }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+  .service-areas-section {
+    padding: 65px 16px;
+  }
+
+  .service-areas-heading {
+    margin-bottom: 38px;
+  }
+
+  .service-areas-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+  }
+
+  .service-areas-title {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+  }
+
+  .service-areas-intro {
+    font-size: 1rem;
+  }
+
+  .service-areas-layout {
+    gap: 34px;
+  }
+
+  .service-areas-map {
+    min-height: 350px;
+    border-radius: 20px;
+  }
+
+  .service-areas-map iframe {
+    min-height: 350px;
+  }
+
+  .service-areas-state-mark {
+    width: 46px;
+    height: 46px;
+  }
+
+  .service-area-card {
+    padding: 20px;
+  }
+
+  .service-area-card-heading {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-areas-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service-areas-footer p {
+    max-width: none;
+    text-align: center;
+  }
+
+  .service-areas-button {
+    width: 100%;
+  }
+}
 /* ================================
    REVIEW CARDS
 ================================ */
+.hero-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 28px;
+}
+
+.hero-google-logo {
+  height: 34px;
+  width: auto;
+}
+
+.hero-rating-text {
+  color: #173f66;
+  font-size: 1rem;
+  font-weight: 700;
+}
 
 .review-card {
   display: flex;

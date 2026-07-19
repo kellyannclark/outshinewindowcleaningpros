@@ -12,9 +12,17 @@ const AboutHero = () => {
       <div className="hero-overlay">
         <div className="hero-content">
           <div className="hero-review">
-            <span className="hero-stars" aria-hidden="true">
-              ★★★★★
+           <div className="hero-rating">
+            <img
+              src="/google-reviews.png"
+              alt="Google Reviews"
+              className="hero-google-logo"
+            />
+
+            <span className="hero-rating-text">
+              <strong>100+ Verified Google Reviews</strong>
             </span>
+          </div>
 
             <span>Family-Owned • Trusted Throughout Utah County</span>
           </div>

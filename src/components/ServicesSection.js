@@ -64,7 +64,14 @@ const ServicesSection = () => {
     <section id="services" className="services-section">
       <div className="services-heading">
        
-        <h2 className="services-title">Our Services</h2>
+        <p className="services-eyebrow">
+            Everything You Need
+          </p>
+
+          <h2 className="services-title">
+            To Let Your Home{" "}
+            <span className="outshine-word">OUTSHINE.</span>
+          </h2>
       </div>
 
       <div className="services-grid">
