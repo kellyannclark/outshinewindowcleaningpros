@@ -6,8 +6,13 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="site-footer-inner">
+        {/* BRAND */}
         <div className="footer-brand-column">
-          <Link to="/" className="footer-logo-link">
+          <Link
+            to="/"
+            className="footer-logo-link"
+            aria-label="Go to the Outshine homepage"
+          >
             <img
               src="/logo1.png"
               alt="Outshine Window Cleaning Pros"
@@ -16,8 +21,9 @@ const Footer = () => {
           </Link>
 
           <p className="footer-brand-copy">
-            Professional window cleaning that helps your home feel brighter,
-            cleaner, and beautifully cared for.
+            Professional window cleaning and exterior property care that helps
+            your home or business feel brighter, cleaner, and beautifully cared
+            for.
           </p>
 
           <div className="footer-social-links">
@@ -38,6 +44,7 @@ const Footer = () => {
                   stroke="currentColor"
                   strokeWidth="2"
                 />
+
                 <circle
                   cx="12"
                   cy="12"
@@ -46,7 +53,13 @@ const Footer = () => {
                   stroke="currentColor"
                   strokeWidth="2"
                 />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                />
               </svg>
             </a>
 
@@ -77,58 +90,87 @@ const Footer = () => {
                   stroke="currentColor"
                   strokeWidth="1.8"
                 />
-                <path d="M10 9l5 3-5 3z" fill="currentColor" />
+
+                <path
+                  d="M10 9l5 3-5 3z"
+                  fill="currentColor"
+                />
               </svg>
             </a>
           </div>
         </div>
 
+        {/* COMPANY */}
         <div className="footer-column">
           <h3>Company</h3>
 
-          <nav className="footer-links" aria-label="Company footer navigation">
+          <nav
+            className="footer-links"
+            aria-label="Company footer navigation"
+          >
             <Link to="/about">About Us</Link>
-            <Link to="/quote">Get a Quote</Link>
-            <Link to="/reviews">Reviews</Link>
-            <Link to="/#services">Our Services</Link>
 
-            <a href="tel:8016618232">Call Us</a>
+            <Link to="/quote">Get a Free Quote</Link>
+
+            <Link to="/reviews">Reviews</Link>
+
+            <Link to="/exterior-window-cleaning">
+              Our Services
+            </Link>
+
+            <a href="tel:8016618232">
+              Call Us
+            </a>
+
             <a href="mailto:outshinewindowcleaningpros@gmail.com">
               Contact
             </a>
           </nav>
         </div>
 
+        {/* SERVICES */}
         <div className="footer-column">
           <h3>Services</h3>
 
-          <nav className="footer-links" aria-label="Service footer navigation">
-            <Link to="/#exterior-window-cleaning">
+          <nav
+            className="footer-links"
+            aria-label="Service footer navigation"
+          >
+            <Link to="/exterior-window-cleaning">
               Exterior Window Cleaning
             </Link>
 
-            <Link to="/#interior-window-cleaning">
+            <Link to="/interior-window-cleaning">
               Interior Window Cleaning
             </Link>
 
-            <Link to="/#screen-cleaning">Screen Cleaning</Link>
+            <Link to="/screen-cleaning">
+              Screen Cleaning
+            </Link>
 
-            <Link to="/#track-detailing">Track Detailing</Link>
+            <Link to="/track-detailing">
+              Track Detailing
+            </Link>
 
-            <Link to="/#solar-panel-cleaning">
+            <Link to="/solar-panel-cleaning">
               Solar Panel Cleaning
             </Link>
 
-            <Link to="/#gutter-cleaning">Gutter Cleaning</Link>
+            <Link to="/gutter-cleaning">
+              Gutter Cleaning
+            </Link>
 
-            <Link to="/#pressure-washing">Pressure Washing</Link>
+            <Link to="/pressure-washing">
+              Pressure Washing
+            </Link>
 
-            <Link to="/#christmas-lights">
+            <Link to="/christmas-lights">
               Christmas Light Installation
             </Link>
           </nav>
         </div>
 
+        {/* AREAS SERVED */}
         <div className="footer-column">
           <h3>Areas Served</h3>
 
@@ -146,6 +188,7 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* FOOTER BOTTOM */}
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
           <p>
@@ -154,8 +197,13 @@ const Footer = () => {
           </p>
 
           <div className="footer-bottom-links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms">Terms of Service</Link>
+            <Link to="/privacy-policy">
+              Privacy Policy
+            </Link>
+
+            <Link to="/terms">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
