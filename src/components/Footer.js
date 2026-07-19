@@ -44,7 +44,6 @@ const Footer = () => {
                   stroke="currentColor"
                   strokeWidth="2"
                 />
-
                 <circle
                   cx="12"
                   cy="12"
@@ -53,7 +52,6 @@ const Footer = () => {
                   stroke="currentColor"
                   strokeWidth="2"
                 />
-
                 <circle
                   cx="17.5"
                   cy="6.5"
@@ -90,7 +88,6 @@ const Footer = () => {
                   stroke="currentColor"
                   strokeWidth="1.8"
                 />
-
                 <path
                   d="M10 9l5 3-5 3z"
                   fill="currentColor"
@@ -109,6 +106,10 @@ const Footer = () => {
             aria-label="Company footer navigation"
           >
             <Link to="/about">About Us</Link>
+
+            <Link to="/commercial-cleaning">
+              Commercial Cleaning
+            </Link>
 
             <Link to="/quote">Get a Free Quote</Link>
 
@@ -136,6 +137,10 @@ const Footer = () => {
             className="footer-links"
             aria-label="Service footer navigation"
           >
+            <Link to="/commercial-cleaning">
+              Commercial Cleaning
+            </Link>
+
             <Link to="/exterior-window-cleaning">
               Exterior Window Cleaning
             </Link>

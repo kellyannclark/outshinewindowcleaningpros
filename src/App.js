@@ -22,6 +22,7 @@ import SolarPanelCleaningPage from "./components/SolarPanelCleaningPage";
 import GutterCleaningPage from "./components/GutterCleaningPage";
 import PressureWashingPage from "./components/PressureWashingPage";
 import ChristmasLightPage from "./components/ChristmasLightPage";
+import CommercialCleaner from "./components/CommercialCleaner";
 
 import "./App.css";
 import "./index.css";
@@ -91,6 +92,10 @@ function App() {
       <Route
         path="/christmas-lights"
         element={<ChristmasLightPage />}
+      />
+      <Route
+        path="/commercial-cleaning"
+        element={<CommercialCleaner />}
       />
       </Routes>
 

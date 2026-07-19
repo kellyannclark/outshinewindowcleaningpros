@@ -184,6 +184,14 @@ const Header = () => {
 
           <button
             type="button"
+            className="nav-link"
+            onClick={() => navigateTo("/commercial-cleaning")}
+          >
+            Commercial Cleaning
+          </button>
+
+          <button
+            type="button"
             className="header-quote-button hero-call-button"
             onClick={callOutshine}
           >
@@ -331,6 +339,14 @@ const Header = () => {
             >
               Reviews
             </button>
+
+            <button
+            type="button"
+            className="nav-link"
+            onClick={() => navigateTo("/commercial-cleaning")}
+          >
+            Commercial Cleaning
+          </button>
 
             <button
               type="button"
