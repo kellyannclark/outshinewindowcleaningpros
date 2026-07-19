@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import "./ContactForm.css";
+
 
 const initialFormData = {
   name: "",
@@ -12,6 +15,8 @@ const initialFormData = {
 const ContactForm = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+const [submitError, setSubmitError] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -26,16 +31,42 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+ const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    // This currently logs the information.
-    // Connect this to your email provider or form service before publishing.
-    console.log("Quote request submitted:", formData);
+  setIsSending(true);
+  setSubmitted(false);
+  setSubmitError("");
+
+  try {
+    await emailjs.send(
+      "service_l8eskqs",
+      "template_v8jmszw",
+      {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        service: formData.service,
+        message: formData.message,
+      },
+      {
+        publicKey: "mfnwrGVG6oYIUUDZu",
+      }
+    );
 
     setSubmitted(true);
     setFormData(initialFormData);
-  };
+  } catch (error) {
+    console.error("EmailJS error:", error);
+
+    setSubmitError(
+      "We could not send your request. Please call us at (801) 661-8232."
+    );
+  } finally {
+    setIsSending(false);
+  }
+};
 
   return (
     <section className="contact-section" id="contact">
@@ -159,21 +190,28 @@ const ContactForm = () => {
             </div>
 
             {submitted && (
-              <div className="contact-success" role="status" aria-live="polite">
-                <span className="contact-success-icon" aria-hidden="true">
-                  ✓
-                </span>
+  <div className="contact-success" role="status" aria-live="polite">
+            <span className="contact-success-icon" aria-hidden="true">
+              ✓
+            </span>
 
-                <div>
-                  <strong>Thank you!</strong>
-                  <p>
-                    Your request has been received. We’ll be in touch shortly.
-                  </p>
-                </div>
-              </div>
-            )}
+            <div>
+              <strong>Thank you!</strong>
+              <p>
+                Your request has been received. We’ll be in touch shortly.
+              </p>
+            </div>
+          </div>
+        )}
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+        {submitError && (
+          <div className="contact-error" role="alert">
+            <strong>Something went wrong.</strong>
+            <p>{submitError}</p>
+          </div>
+        )}
+
+        <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-form-row">
                 <div className="contact-field">
                   <label htmlFor="contact-name">Name</label>
@@ -314,23 +352,31 @@ const ContactForm = () => {
                 />
               </div>
 
-              <button type="submit" className="contact-submit-button">
-                <span>Request My Quote</span>
+              <button
+                type="submit"
+                className="contact-submit-button"
+                disabled={isSending}
+              >
+                <span>
+                  {isSending ? "Sending Your Request..." : "Request My Quote"}
+                </span>
 
-                <svg
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  className="contact-arrow-icon"
-                >
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                {!isSending && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    className="contact-arrow-icon"
+                  >
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
               </button>
 
               <p className="contact-privacy-note">

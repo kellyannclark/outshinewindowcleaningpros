@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ServicesSection from "./components/ServicesSection";
@@ -10,6 +11,8 @@ import About from "./components/About";
 import RecurringPlans from "./components/RecurringPlans";
 import ReviewsSection from "./components/ReviewsSection";
 import ServiceAreasSection from "./components/ServiceAreasSection";
+import FinalCTASection from "./components/FinalCTASection";
+import QuotePage from "./components/QuotePage";
 import "./App.css";
 import "./index.css";
 
@@ -26,6 +29,8 @@ function HomePage() {
         <RecurringPlans />
         <ReviewsSection />
         <ServiceAreasSection />
+        <FinalCTASection />
+
 
 
 
@@ -75,6 +80,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/quote" element={<QuotePage />} />
         </Routes>
 
         <Footer />
